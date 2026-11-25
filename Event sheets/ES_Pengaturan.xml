@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES_Pengaturan</name>
+    <events>
+        <variable constant="0" name="MusikAktif" sid="426976827983007" static="0" type="number">1</variable>
+        <variable constant="0" name="SfxAktif" sid="170253465274963" static="0" type="number">1</variable>
+        <variable constant="0" name="AsalCredits" sid="515588012018362" static="0" type="number">1</variable>
+        <variable constant="0" name="DBLevelTerbuka" sid="719755054569977" static="0" type="number">1</variable>
+        <variable constant="0" name="DBBintang_Level1" sid="907195287061802" static="0" type="number">0</variable>
+        <variable constant="0" name="DBBintang_Level2" sid="444066084694760" static="0" type="number">0</variable>
+        <variable constant="0" name="DBBintang_Level3" sid="340692897517289" static="0" type="number">0</variable>
+        <variable constant="0" name="DBSkor" sid="198706734604371" static="0" type="number">0</variable>
+        <event-block sid="473764506877527">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="379039946977241" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="992856153192588" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Cara&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="239960273221156" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="103699038340042">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="412784975050701" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="286468675514458" type="Toggle_BGM">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="120095216855672">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="919236883808053" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="547293828858773" type="Toggle_BGM">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="316802507761053">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="361422069496245" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="285093877755891">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="344780477567879" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="640703360771972" type="Toggle_SFX">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="699601764262316">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="150414226242503" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="971867976376249" type="Toggle_SFX">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="497029560794237">
+            <conditions>
+                <condition id="3" name="On touched object" sid="373779812325624" type="Touch">
+                    <param id="0" name="Object">Toggle_BGM</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="325383732584137" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Cara&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="194724207693828" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="199577176276634">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="921804174205817" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="525411826492418" type="Toggle_BGM">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="154541543199610" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="504163505982441" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="540302022399235">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="372194566130050" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="652513471780899" type="Toggle_BGM">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="474321518821298" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="318211860815989" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="861435195999478">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="766686888813508" type="Audio">
+                                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="985869389687342" type="Audio">
+                                    <param id="0" name="Audio file">bgm</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="958081730291753">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="227704610581497" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="819307326384833" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="974596968403001">
+            <conditions>
+                <condition id="3" name="On touched object" sid="602000632141297" type="Touch">
+                    <param id="0" name="Object">Toggle_SFX</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="702295375828537" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Cara&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="155831855425743" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="838150513260178">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="936301120940499" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="130836396784577" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="922785291323179" type="Toggle_SFX">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="451272905404192">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="626183530954801" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="453085305078336" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="485392419104311" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="417704942948696" type="Toggle_SFX">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="837877961109728">
+            <conditions>
+                <condition id="3" name="On touched object" sid="324115472407216" type="Touch">
+                    <param id="0" name="Object">Btn_CreditsSet</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="885623781943989" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Cara&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="444823035186566" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="680013678744587" type="System">
+                    <param id="0" name="Variable">AsalCredits</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="341356435682571" type="System">
+                    <param id="0" name="Layout">Layout_Credits</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="825482548938278">
+            <conditions>
+                <condition id="3" name="On touched object" sid="592278993580868" type="Touch">
+                    <param id="0" name="Object">Btn_Lanjutkan</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="968362548097916" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Cara&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="395537695171508" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="425525974063155" type="System">
+                    <param id="0" name="Layout">Layout_Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="309884067688295">
+            <conditions>
+                <condition id="3" name="On touched object" sid="319287582322871" type="Touch">
+                    <param id="0" name="Object">Btn_CaraBermain</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="942261073291141" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Cara&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="374187554219044" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="792445479214673" type="Layar_Gelap" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="562006007892358" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Cara&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="640671511989496" type="Layar_Gelap">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="245946797786377">
+            <conditions>
+                <condition id="3" name="On touched object" sid="115303270619322" type="Touch">
+                    <param id="0" name="Object">Btn_LanjutSoal</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="449154108958320" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Cara&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="809854272640132" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="207911892666690" type="Layar_Gelap" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="444381258258741" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Cara&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="218579066247622" type="Layar_Gelap">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="479563523207795">
+            <conditions>
+                <condition id="3" name="On touched object" sid="774037292698117" type="Touch">
+                    <param id="0" name="Object">Btn_ResetSkor</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="515618955661543" type="Layar_Gelap" />
+                <condition id="-9" inverted="1" name="Layer is visible" sid="942921602733836" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Cara&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="688223273585758" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="556298774043449" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="670411380922599" type="Layar_Gelap">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="237373564554424">
+            <conditions>
+                <condition id="3" name="On touched object" sid="339990362942515" type="Touch">
+                    <param id="0" name="Object">Btn_KeluarGame</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="894778009514439" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="680434469130594" type="Layar_Gelap" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="976290691173139" type="System">
+                    <param id="0" name="Variable">DBSkor</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="530975369862388" type="System">
+                    <param id="0" name="Variable">DBBintang_Level1</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="380341118781134" type="System">
+                    <param id="0" name="Variable">DBBintang_Level2</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="169679293465527" type="System">
+                    <param id="0" name="Variable">DBBintang_Level3</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="394334179801325" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set item" sid="623507232542077" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Skor&quot;</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set item" sid="994885581113966" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level1&quot;</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set item" sid="999058771907958" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level2&quot;</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set item" sid="192445166649087" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level3&quot;</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set item" sid="452370722849556" type="LocalStorage">
+                    <param id="0" name="Key">&quot;LevelTerbuka&quot;</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="110001673404793" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="983715508924714" type="Layar_Gelap">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="783225591085119">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="478992284086276" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="291682188916146" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="890810996419361">
+            <conditions>
+                <condition id="3" name="On touched object" sid="515667952313751" type="Touch">
+                    <param id="0" name="Object">Btn_Batal</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="535066044001322" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="224815968080292" type="Layar_Gelap" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="459796988069515" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Reset&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="362010940856492" type="Layar_Gelap">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES_Materi</name>
+    <events>
+        <variable comment="Menyimpan nomor halaman materi yang sedang dibuka (1 sampai 4)." constant="0" name="HalamanMateri" sid="928413634192574" static="0" type="number">0</variable>
+        <event-block sid="445847641496016">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="496094459329685" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="494597043946823" type="System">
+                    <param id="0" name="Variable">HalamanMateri</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="753433736112747">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="414539137104535" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="5" inverted="1" name="Is tag playing" sid="204404536811707" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="386667834023095" type="Audio">
+                            <param id="0" name="Audio file">bgm</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="347281322119239">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="469155428163179" type="System">
+                    <param id="0" name="Variable">HalamanMateri</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="849581634781448" type="Txt_SubjudulMateri">
+                    <param id="0" name="Text">&quot;1. Mengapa Kita Harus Memilah Sampah?&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="984262784193904" type="Txt_IsiMateri">
+                    <param id="0" name="Text">&quot;Setiap hari kita menghasilkan sampah dari sisa makanan dan kemasan jajan.&quot; &amp; newline &amp; newline &amp; &quot;Jika dicampur, sampah menjadi bau, kotor, dan mencemari lingkungan sekolah. Dengan memilahnya, sampah bisa diolah kembali!&quot;</param>
+                </action>
+                <action id="5" name="Set frame" sid="656521470474136" type="Gambar_IlustrasiMateri">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="0" name="Set text" sid="669621104126254" type="Txt_HalamanMateri">
+                    <param id="0" name="Text">&quot;Halaman 1 / 4&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="153407299947857" type="Btn_PrevMateri">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="948535268655391" type="Btn_NextMateri">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="612176329896091" type="Btn_KeSimulasiMateri">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="339743321588042">
+            <conditions>
+                <condition id="-22" name="Else" sid="985926118835646" type="System" />
+                <condition id="-14" name="Compare variable" sid="176492573626661" type="System">
+                    <param id="0" name="Variable">HalamanMateri</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="182887372783811" type="Txt_SubjudulMateri">
+                    <param id="0" name="Text">&quot;2. Sampah Organik (Tong Hijau)&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="833389568354571" type="Txt_IsiMateri">
+                    <param id="0" name="Text">&quot;Sampah organik berasal dari makhluk hidup (alam) sehingga mudah membusuk dan terurai tanah.&quot; &amp; newline &amp; newline &amp; &quot;Contoh: Sisa buah apel, kulit pisang, daun kering, dan sisa sayur.&quot; &amp; newline &amp; &quot;Manfaat: Bisa diolah menjadi pupuk kompos untuk tanaman sekolah.&quot;</param>
+                </action>
+                <action id="5" name="Set frame" sid="386724845296354" type="Gambar_IlustrasiMateri">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="0" name="Set text" sid="800717463600369" type="Txt_HalamanMateri">
+                    <param id="0" name="Text">&quot;Halaman 2 / 4&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="445343789407413" type="Btn_PrevMateri">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="351766546722344" type="Btn_NextMateri">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="366711249927338" type="Btn_KeSimulasiMateri">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="184727095591206">
+            <conditions>
+                <condition id="-22" name="Else" sid="481223971831878" type="System" />
+                <condition id="-14" name="Compare variable" sid="145337346660312" type="System">
+                    <param id="0" name="Variable">HalamanMateri</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="173879632211491" type="Txt_SubjudulMateri">
+                    <param id="0" name="Text">&quot;3. Sampah Anorganik (Tong Kuning)&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="432277373985608" type="Txt_IsiMateri">
+                    <param id="0" name="Text">&quot;Sampah anorganik berasal dari bahan buatan pabrik sehingga sangat sulit hancur di tanah (butuh puluhan tahun).&quot; &amp; newline &amp; newline &amp; &quot;Contoh: Botol plastik, kantong kresek, dan kaleng minuman.&quot; &amp; newline &amp; &quot;Manfaat: Bisa didaur ulang menjadi barang baru yang berguna.&quot;</param>
+                </action>
+                <action id="5" name="Set frame" sid="415260268938123" type="Gambar_IlustrasiMateri">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+                <action id="0" name="Set text" sid="560757879673289" type="Txt_HalamanMateri">
+                    <param id="0" name="Text">&quot;Halaman 3 / 4&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="605808502242338" type="Btn_PrevMateri">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="313735876194620" type="Btn_NextMateri">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="644372665170040" type="Btn_KeSimulasiMateri">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="975874119711728">
+            <conditions>
+                <condition id="-22" name="Else" sid="620862977490176" type="System" />
+                <condition id="-14" name="Compare variable" sid="636965486051415" type="System">
+                    <param id="0" name="Variable">HalamanMateri</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="763099732828341" type="Txt_SubjudulMateri">
+                    <param id="0" name="Text">&quot;4. Gerakan 3R Peduli Lingkungan&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="772307636235956" type="Txt_IsiMateri">
+                    <param id="0" name="Text">&quot;1. REDUCE (Mengurangi): Membawa botol minum sendiri agar mengurangi sampah plastik.&quot; &amp; newline &amp; &quot;2. REUSE (Menggunakan Kembali): Memakai ulang botol/kaleng bersih menjadi pot tanaman.&quot; &amp; newline &amp; &quot;3. RECYCLE (Mendaur Ulang): Mengolah sampah menjadi kerajinan atau bahan baru.&quot;</param>
+                </action>
+                <action id="5" name="Set frame" sid="818374893967867" type="Gambar_IlustrasiMateri">
+                    <param id="0" name="Frame number">3</param>
+                </action>
+                <action id="0" name="Set text" sid="583277406718753" type="Txt_HalamanMateri">
+                    <param id="0" name="Text">&quot;Halaman 4 / 4&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="411219159111151" type="Btn_PrevMateri">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="866943706666537" type="Btn_NextMateri">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="819982674065191" type="Btn_KeSimulasiMateri">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="305863128396949">
+            <conditions>
+                <condition id="3" name="On touched object" sid="126262206969411" type="Touch">
+                    <param id="0" name="Object">Btn_NextMateri</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="215848772550274" type="System">
+                    <param id="0" name="Variable">HalamanMateri</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="753267560605638" type="Btn_NextMateri" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="540807101786023" type="System">
+                    <param id="0" name="Variable">HalamanMateri</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="564654908873729">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="886080748883387" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="681406393156939" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="742862534715230">
+            <conditions>
+                <condition id="3" name="On touched object" sid="872992862697283" type="Touch">
+                    <param id="0" name="Object">Btn_PrevMateri</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="903847402683895" type="System">
+                    <param id="0" name="Variable">HalamanMateri</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="527806302492978" type="Btn_PrevMateri" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="194948235324707" type="System">
+                    <param id="0" name="Variable">HalamanMateri</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="565271016660804">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="140349473396385" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="798541338300710" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="868200746218612">
+            <conditions>
+                <condition id="3" name="On touched object" sid="231081820204863" type="Touch">
+                    <param id="0" name="Object">Btn_HomeMateri</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="586395998852794">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="898730216439374" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="552040574495496" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="361390607801365">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="412067175250507" type="System">
+                            <param id="0" name="Layout">Layout_Menu</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="422334321966086">
+            <conditions>
+                <condition id="3" name="On touched object" sid="333547731889437" type="Touch">
+                    <param id="0" name="Object">Btn_KeSimulasiMateri</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="755930276990143" type="Btn_KeSimulasiMateri" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="810591424341631" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="878497484103660">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="983927682880571" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="326428723517228" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="171672576749196">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="343862026595278" type="System">
+                            <param id="0" name="Layout">Layout_Simulasi</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

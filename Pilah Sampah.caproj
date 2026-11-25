@@ -1,0 +1,2310 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Pilah Sampah</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author>Laila Nurmas Vigih</author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.laila.pilahsampah</app-id>
+    <unique-id>2a1rsu3bzr56t</unique-id>
+    <saved-with-version>26200</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1280</width>
+        <height>720</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Layout_Menu</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Scale outer</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Button">
+            <object-type name="Btn_Keluar" sid="424376807945913">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="468486447981775" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Menu\btn_keluar.png">
+                            <collision-poly>
+                                <point x="0.16" y="0.16" />
+                                <point x="0.5" y="0.02" />
+                                <point x="0.84" y="0.16" />
+                                <point x="0.98" y="0.5" />
+                                <point x="0.84" y="0.84" />
+                                <point x="0.5" y="0.98" />
+                                <point x="0.16" y="0.84" />
+                                <point x="0.02" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Credits" sid="983549756970794">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="574922994650835" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Menu\btn_info.png">
+                            <collision-poly>
+                                <point x="0.16" y="0.16" />
+                                <point x="0.5" y="0.02" />
+                                <point x="0.84" y="0.16" />
+                                <point x="0.98" y="0.5" />
+                                <point x="0.83" y="0.83" />
+                                <point x="0.5" y="0.97" />
+                                <point x="0.17" y="0.83" />
+                                <point x="0.02" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Pengaturan" sid="823138800550796">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="340305280124391" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Menu\btn_pengaturan.png">
+                            <collision-poly>
+                                <point x="0.16" y="0.16" />
+                                <point x="0.5" y="0.02" />
+                                <point x="0.84" y="0.16" />
+                                <point x="0.98" y="0.5" />
+                                <point x="0.84" y="0.84" />
+                                <point x="0.5" y="0.98" />
+                                <point x="0.16" y="0.84" />
+                                <point x="0.02" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Materi" sid="957095168012346">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="175387902516484" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Menu\btn_materi_belajar.png">
+                            <collision-poly>
+                                <point x="0.295218" y="0.0744681" />
+                                <point x="0.704781" y="0.0744681" />
+                                <point x="1" y="0.5" />
+                                <point x="0.742015" y="1" />
+                                <point x="0.257986" y="1" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Kembali" sid="760275586532140">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="272044068357770" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Credits\Gemini_Generated_Image_ezex0uezex0uezex_1x1.png">
+                            <collision-poly>
+                                <point x="0.157143" y="0.157143" />
+                                <point x="0.5" y="0.0142857" />
+                                <point x="0.842857" y="0.157143" />
+                                <point x="0.985714" y="0.5" />
+                                <point x="0.842857" y="0.842857" />
+                                <point x="0.5" y="0.985714" />
+                                <point x="0.157143" y="0.842857" />
+                                <point x="0.0142857" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Mulai" sid="878583073907394">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="715699362321806" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Menu\btn_mulai_bermain.png">
+                            <collision-poly>
+                                <point x="0.349206" y="0.0687023" />
+                                <point x="0.650794" y="0.0687023" />
+                                <point x="0.997355" y="0.503817" />
+                                <point x="0.669312" y="0.992366" />
+                                <point x="0.330688" y="0.992366" />
+                                <point x="0.0026455" y="0.503817" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Simulasi" sid="276564897809408">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="531190043941884" speed="5">
+                        <frame duration="1" hotspotX="0.510526" hotspotY="0.645833" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Menu\btn_simulasi.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.104167" />
+                                <point x="0.784211" y="0.5" />
+                                <point x="0.784211" y="0.145833" />
+                                <point x="0.5" y="0.979167" />
+                                <point x="0.205263" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_KeluarGame" sid="767878080016723">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="462199471162220" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_zdvu68zdvu68zdvu (3)_tight.png">
+                            <collision-poly>
+                                <point x="0.00373136" y="0.595745" />
+                                <point x="0.5" y="0.0106383" />
+                                <point x="0.996269" y="0.595745" />
+                                <point x="0.996269" y="0.404255" />
+                                <point x="0.5" y="0.989362" />
+                                <point x="0.00373136" y="0.404255" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_LanjutSoal" sid="335810416959836">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="588428728828896" speed="5">
+                        <frame duration="1" hotspotX="0.501818" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_zdvu68zdvu68zdvu (1)_tight.png">
+                            <collision-poly>
+                                <point x="0.00363638" y="0.553191" />
+                                <point x="0.501818" y="0.0106383" />
+                                <point x="0.996364" y="0.56383" />
+                                <point x="0.996364" y="0.43617" />
+                                <point x="0.501818" y="0.989362" />
+                                <point x="0.00363638" y="0.446809" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_CaraBermain" sid="897772909577797">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="435056746042251" speed="5">
+                        <frame duration="1" hotspotX="0.502618" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_uogn9muogn9muogn_original.png">
+                            <collision-poly>
+                                <point x="0.00688718" y="0.771908" />
+                                <point x="0.502135" y="0.0189326" />
+                                <point x="0.993113" y="0.782366" />
+                                <point x="0.993113" y="0.217634" />
+                                <point x="0.502135" y="0.981068" />
+                                <point x="0.00688718" y="0.228092" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Lanjutkan" sid="983965665265375">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="982793933907945" speed="5">
+                        <frame duration="1" hotspotX="0.502618" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_uogn9muogn9muogn (2)_original.png">
+                            <collision-poly>
+                                <point x="0.00688718" y="0.773223" />
+                                <point x="0.502135" y="0.0166061" />
+                                <point x="0.993113" y="0.783731" />
+                                <point x="0.993113" y="0.216269" />
+                                <point x="0.502135" y="0.983394" />
+                                <point x="0.00688718" y="0.226777" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_ResetSkor" sid="866574349677950">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="951046597323467" speed="5">
+                        <frame duration="1" hotspotX="0.502618" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_uogn9muogn9muogn (1)_original.png">
+                            <collision-poly>
+                                <point x="0.00688718" y="0.771657" />
+                                <point x="0.502135" y="0.0193769" />
+                                <point x="0.993113" y="0.782105" />
+                                <point x="0.993113" y="0.217895" />
+                                <point x="0.502135" y="0.980623" />
+                                <point x="0.00688718" y="0.228343" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_CreditsSet" sid="905319301852275">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="559925625256873" speed="5">
+                        <frame duration="1" hotspotX="0.502146" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\btn_credits.png">
+                            <collision-poly>
+                                <point x="0.00429185" y="0.776596" />
+                                <point x="0.502146" y="0.0106383" />
+                                <point x="0.995708" y="0.787234" />
+                                <point x="0.995708" y="0.212766" />
+                                <point x="0.502146" y="0.989362" />
+                                <point x="0.00429185" y="0.223404" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Batal" sid="421684945091375">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="832354818829533" speed="5">
+                        <frame duration="1" hotspotX="0.503145" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_zdvu68zdvu68zdvu (4)_tight.png">
+                            <collision-poly>
+                                <point x="0" y="0.599863" />
+                                <point x="0.502564" y="0" />
+                                <point x="1" y="0.599863" />
+                                <point x="1" y="0.400137" />
+                                <point x="0.502564" y="1" />
+                                <point x="0" y="0.400137" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_AksiSimulasi" sid="246641694575579">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="511661777094212" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (7)_original.png">
+                            <collision-poly>
+                                <point x="0.147849" y="0.143979" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.852151" y="0.143979" />
+                                <point x="0.997312" y="0.5" />
+                                <point x="0.854839" y="0.858639" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.147849" y="0.856021" />
+                                <point x="0.00268817" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (8)_original.png">
+                            <collision-poly>
+                                <point x="0.149733" y="0.145843" />
+                                <point x="0.5" y="0.0052219" />
+                                <point x="0.850267" y="0.145843" />
+                                <point x="0.994652" y="0.5" />
+                                <point x="0.852941" y="0.856761" />
+                                <point x="0.5" y="0.994778" />
+                                <point x="0.149733" y="0.854157" />
+                                <point x="0.00534759" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_BerandaSimulasi" sid="445892298956696">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="309781156449281" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (5)_original.png">
+                            <collision-poly>
+                                <point x="0.149215" y="0.149215" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.853403" y="0.146597" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.853403" y="0.853403" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.146597" y="0.853403" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_HomeHasilSimulasi" sid="814247748339170">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="556672556808213" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_dshekjdshekjdshe (3)_original.png">
+                            <collision-poly>
+                                <point x="0.151051" y="0.153599" />
+                                <point x="0.5" y="0.00883508" />
+                                <point x="0.851553" y="0.151014" />
+                                <point x="0.994778" y="0.5" />
+                                <point x="0.851553" y="0.848986" />
+                                <point x="0.5" y="0.991165" />
+                                <point x="0.148447" y="0.848986" />
+                                <point x="0.0052219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_MateriSimulasi" sid="639691596617723">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="970041837610308" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (6)_original.png">
+                            <collision-poly>
+                                <point x="0.148352" y="0.141361" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.851648" y="0.141361" />
+                                <point x="0.997253" y="0.5" />
+                                <point x="0.848901" y="0.856021" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.151099" y="0.856021" />
+                                <point x="0.00274725" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_MulaiBermainHasilSimulasi" sid="385072914565914">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="712169447981684" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_dshekjdshekjdshe (4)_original.png">
+                            <collision-poly>
+                                <point x="0.0366492" y="0.114754" />
+                                <point x="0.5" y="0.00819672" />
+                                <point x="0.963351" y="0.114754" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.965969" y="0.893443" />
+                                <point x="0.5" y="0.991803" />
+                                <point x="0.0340314" y="0.893443" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_UlangiGame" sid="469941308890903">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="766768554396781" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_dshekjdshekjdshe (2)_original.png">
+                            <collision-poly>
+                                <point x="0.052356" y="0.123457" />
+                                <point x="0.5" y="0.00617284" />
+                                <point x="0.947644" y="0.123457" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.960733" y="0.907407" />
+                                <point x="0.5" y="0.993827" />
+                                <point x="0.039267" y="0.907407" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Level1" sid="551259645020220">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="568388057733589" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\Gemini_Generated_Image_rk1lovrk1lovrk1l (1)_bw_original.png">
+                            <collision-poly>
+                                <point x="0.162313" y="0.227749" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.839552" y="0.225131" />
+                                <point x="0.981343" y="0.5" />
+                                <point x="0.940298" y="0.91623" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.0597015" y="0.91623" />
+                                <point x="0.0223881" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.162313" y="0.227749" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.839552" y="0.225131" />
+                                <point x="0.981343" y="0.5" />
+                                <point x="0.940298" y="0.91623" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.0597015" y="0.91623" />
+                                <point x="0.0223881" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Level2" sid="957673638125892">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="311750766194925" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\Gemini_Generated_Image_rk1lovrk1lovrk1l (2)_bw_original.png">
+                            <collision-poly>
+                                <point x="0.185824" y="0.253927" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.819923" y="0.246073" />
+                                <point x="0.975096" y="0.5" />
+                                <point x="0.908046" y="0.874346" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.0900383" y="0.876963" />
+                                <point x="0.0249042" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.185824" y="0.253927" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.819923" y="0.246073" />
+                                <point x="0.975096" y="0.5" />
+                                <point x="0.908046" y="0.874346" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.0900383" y="0.876963" />
+                                <point x="0.0249042" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Level3" sid="124327797607562">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="826523549028670" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\Gemini_Generated_Image_rk1lovrk1lovrk1l (4)_original.png">
+                            <collision-poly>
+                                <point x="0.180077" y="0.247368" />
+                                <point x="0.5" y="0" />
+                                <point x="0.819923" y="0.247368" />
+                                <point x="0.97318" y="0.5" />
+                                <point x="0.911877" y="0.878947" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0881226" y="0.878947" />
+                                <point x="0.0268199" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.180077" y="0.247368" />
+                                <point x="0.5" y="0" />
+                                <point x="0.819923" y="0.247368" />
+                                <point x="0.97318" y="0.5" />
+                                <point x="0.911877" y="0.878947" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0881226" y="0.878947" />
+                                <point x="0.0268199" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_OpsiA" sid="821688353301121">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="299418377948999" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Gemini_Generated_Image_original.png">
+                            <collision-poly>
+                                <point x="0.0287958" y="0.0763889" />
+                                <point x="0.5" y="0.00694444" />
+                                <point x="0.971204" y="0.0763889" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.968586" y="0.916667" />
+                                <point x="0.5" y="0.993056" />
+                                <point x="0.0314136" y="0.916667" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_SuaraGame" sid="314625848938318">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="490947047173637" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Gemini_Generated_Image_qj52fiqj52fiqj52 (5)_original.png">
+                            <collision-poly>
+                                <point x="0.149215" y="0.149215" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.850785" y="0.149215" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.850785" y="0.850785" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.149215" y="0.850785" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Gemini_Generated_Image_qj52fiqj52fiqj52 (4)_original.png">
+                            <collision-poly>
+                                <point x="0.149215" y="0.15" />
+                                <point x="0.5" y="0.00263158" />
+                                <point x="0.848168" y="0.152632" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.850785" y="0.85" />
+                                <point x="0.5" y="0.997368" />
+                                <point x="0.149215" y="0.85" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_OpsiB" sid="524801853522650">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="420166313462408" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Gemini_Generated_Image (1)_original.png">
+                            <collision-poly>
+                                <point x="0.0287958" y="0.0774648" />
+                                <point x="0.5" y="0.00704225" />
+                                <point x="0.971204" y="0.0774648" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.968586" y="0.915493" />
+                                <point x="0.5" y="0.992958" />
+                                <point x="0.0314136" y="0.915493" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_OpsiC" sid="529816457577310">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="124339141643482" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Gemini_Generated_Image_qj52fiqj52fiqj52 (1)_original.png">
+                            <collision-poly>
+                                <point x="0.0287958" y="0.0774648" />
+                                <point x="0.5" y="0.00704225" />
+                                <point x="0.971204" y="0.0774648" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.965969" y="0.908451" />
+                                <point x="0.5" y="0.992958" />
+                                <point x="0.0314136" y="0.915493" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_Pause" sid="446253034429929">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="974766468602610" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Gemini_Generated_Image_original.png">
+                            <collision-poly>
+                                <point x="0.151051" y="0.151051" />
+                                <point x="0.5" y="0.0052219" />
+                                <point x="0.846345" y="0.153655" />
+                                <point x="0.994778" y="0.5" />
+                                <point x="0.848949" y="0.848949" />
+                                <point x="0.5" y="0.994778" />
+                                <point x="0.151051" y="0.848949" />
+                                <point x="0.0052219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_HomeHasil" sid="546521406407420">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="854162011082758" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\25-11-2026_03-23-32_004_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="0.149215" y="0.149215" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.850785" y="0.149215" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.850785" y="0.850785" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.149215" y="0.850785" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_LanjutHasil" sid="994675600179731">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="121776692059569" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\25-11-2026_03-23-31_001_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="0.148148" y="0.147368" />
+                                <point x="0.5" y="0" />
+                                <point x="0.851852" y="0.147368" />
+                                <point x="1" y="0.5" />
+                                <point x="0.854497" y="0.855263" />
+                                <point x="0.5" y="1" />
+                                <point x="0.145503" y="0.855263" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_UlangHasil" sid="599166458291804">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="351975875491244" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\25-11-2026_03-23-32_006_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="0.147368" y="0.147368" />
+                                <point x="0.5" y="0" />
+                                <point x="0.852632" y="0.147368" />
+                                <point x="1" y="0.5" />
+                                <point x="0.852632" y="0.852632" />
+                                <point x="0.5" y="1" />
+                                <point x="0.147368" y="0.852632" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_NextMateri" sid="959962756580055">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="630182867290762" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\25-11-2026_03-23-31_001_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="0.148148" y="0.147368" />
+                                <point x="0.5" y="0" />
+                                <point x="0.851852" y="0.147368" />
+                                <point x="1" y="0.5" />
+                                <point x="0.854497" y="0.855263" />
+                                <point x="0.5" y="1" />
+                                <point x="0.145503" y="0.855263" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_PrevMateri" sid="191892030584578">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="219379134840291" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\25-11-2026_03-23-31_001_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="1" y="0.5" />
+                                <point x="0.854497" y="0.855263" />
+                                <point x="0.5" y="1" />
+                                <point x="0.145503" y="0.855263" />
+                                <point x="0" y="0.5" />
+                                <point x="0.148148" y="0.147368" />
+                                <point x="0.5" y="0" />
+                                <point x="0.851852" y="0.147368" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_HomeMateri" sid="679617565153350">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="770903098519131" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (5)_original.png">
+                            <collision-poly>
+                                <point x="0.149215" y="0.149215" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.853403" y="0.146597" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.853403" y="0.853403" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.146597" y="0.853403" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Btn_KeSimulasiMateri" sid="776308176851323">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="618752826533245" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_dshekjdshekjdshe (4)_original.png">
+                            <collision-poly>
+                                <point x="0.0366492" y="0.114754" />
+                                <point x="0.5" y="0.00819672" />
+                                <point x="0.963351" y="0.114754" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.965969" y="0.893443" />
+                                <point x="0.5" y="0.991803" />
+                                <point x="0.0340314" y="0.893443" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Background">
+            <object-type name="Bg_Kelas" sid="703403157704167">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="428150586151278" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\output_png\Gemini_Generated_Image_ezex0uezex0uezex (1)_1280x720.jpg" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bg_Menu" sid="286360620128701">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="692139861814595" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Menu\Bg_Menu.jpg" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Layar_Gelap" sid="136291332227668">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="Bg_Lapangan" sid="276798783274011">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="629318675750999" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4_1280x720.jpg" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bg_PilihLevel" sid="695641184106624">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="491287760571154" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\Bg_PilihLevel.jpg" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bg_Gameplay" sid="125098633824086">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="122551679490962" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Bg_Gameplay.jpg" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bg_Hasil" sid="782852305456269">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="918272506443933" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\Bg_Hasil.jpg" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Banner">
+            <object-type name="Banner_Menu" sid="253842534653699">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="381215626114687" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Menu\judul_pilah_sampah.png">
+                            <collision-poly>
+                                <point x="0.319697" y="0.319697" />
+                                <point x="0.5" y="0.337879" />
+                                <point x="0.680303" y="0.319697" />
+                                <point x="0.980303" y="0.5" />
+                                <point x="0.672727" y="0.672727" />
+                                <point x="0.5" y="0.666667" />
+                                <point x="0.327273" y="0.672727" />
+                                <point x="0.0212121" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Banner_MisiSim" sid="801453568175672">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="547095262210838" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_16wih016wih016wi_original.png">
+                            <collision-poly>
+                                <point x="0.039267" y="0.12931" />
+                                <point x="0.5" y="0.0431034" />
+                                <point x="0.960733" y="0.12931" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.984293" y="0.948276" />
+                                <point x="0.5" y="0.956897" />
+                                <point x="0.0183246" y="0.939655" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Banner_PilihLevel" sid="445703010151058">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="704575647006436" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\Gemini_Generated_Image_rk1lovrk1lovrk1l_original.png">
+                            <collision-poly>
+                                <point x="0.078534" y="0.208333" />
+                                <point x="0.5" y="0.118056" />
+                                <point x="0.929319" y="0.1875" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.968586" y="0.916667" />
+                                <point x="0.5" y="0.902778" />
+                                <point x="0.0287958" y="0.923611" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Label_HasilPermainan" sid="260041212024135">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="123701236403838" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\judul_hasil_permainan.png">
+                            <collision-poly>
+                                <point x="0.0212355" y="0.144737" />
+                                <point x="0.5" y="0.0394737" />
+                                <point x="0.978764" y="0.144737" />
+                                <point x="0.984556" y="0.894737" />
+                                <point x="0.5" y="0.868421" />
+                                <point x="0.0135135" y="0.907895" />
+                                <point x="0.00579151" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Label_HomeHasil" sid="914906946613133">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="665673452596638" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\25-11-2026_03-23-32_002_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="0.0157895" y="0.047619" />
+                                <point x="0.5" y="0.134921" />
+                                <point x="0.984211" y="0.047619" />
+                                <point x="0.984211" y="0.952381" />
+                                <point x="0.5" y="0.888889" />
+                                <point x="0.0157895" y="0.952381" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Label_LanjutHasil" sid="247146252228375">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="191750069251233" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\25-11-2026_03-23-33_008_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="0.0105263" y="0.0444444" />
+                                <point x="0.5" y="0.0111111" />
+                                <point x="0.989474" y="0.0444444" />
+                                <point x="0.95" y="0.5" />
+                                <point x="0.95" y="0.788889" />
+                                <point x="0.5" y="0.977778" />
+                                <point x="0.0105263" y="0.955556" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Label_UlangHasil" sid="579491698506743">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="207122629951378" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\25-11-2026_03-23-32_007_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="0.013089" y="0.05" />
+                                <point x="0.5" y="0.03" />
+                                <point x="0.973822" y="0.1" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.97644" y="0.91" />
+                                <point x="0.5" y="0.88" />
+                                <point x="0.0314136" y="0.88" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Label_JudulMateri" sid="217531455597497">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="113147584898759" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Materi\judul_materi_edukasi.png">
+                            <collision-poly>
+                                <point x="0.0148305" y="0.109375" />
+                                <point x="0.5" y="0.046875" />
+                                <point x="0.985169" y="0.109375" />
+                                <point x="0.987288" y="0.90625" />
+                                <point x="0.5" y="0.9375" />
+                                <point x="0.0148305" y="0.890625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Sampah">
+            <object-type name="ObjekSampahSimulasi" sid="307432849890586">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="SedangDipegang" sid="345943370744118" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="637963742987610" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib_original.png">
+                            <collision-poly>
+                                <point x="0.259843" y="0.172775" />
+                                <point x="0.5" y="0.091623" />
+                                <point x="0.740157" y="0.172775" />
+                                <point x="0.728346" y="0.5" />
+                                <point x="0.870079" y="0.913613" />
+                                <point x="0.5" y="0.97644" />
+                                <point x="0.125984" y="0.91623" />
+                                <point x="0.26378" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_etgjz7etgjz7etgj (1)_original.png">
+                            <collision-poly>
+                                <point x="0.260742" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.739258" y="0.174488" />
+                                <point x="0.727491" y="0.5" />
+                                <point x="0.868693" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.127385" y="0.914051" />
+                                <point x="0.264664" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib (1)_original.png">
+                            <collision-poly>
+                                <point x="0.261289" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.738711" y="0.174488" />
+                                <point x="0.726971" y="0.5" />
+                                <point x="0.867849" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.128237" y="0.914051" />
+                                <point x="0.265203" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_etgjz7etgjz7etgj (2)_original.png">
+                            <collision-poly>
+                                <point x="0.262482" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.737518" y="0.174488" />
+                                <point x="0.725837" y="0.5" />
+                                <point x="0.866012" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.130094" y="0.914051" />
+                                <point x="0.266375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib (2)_original.png">
+                            <collision-poly>
+                                <point x="0.261522" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.738478" y="0.174488" />
+                                <point x="0.72675" y="0.5" />
+                                <point x="0.867491" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.1286" y="0.914051" />
+                                <point x="0.265431" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib (3)_original.png">
+                            <collision-poly>
+                                <point x="0.261325" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.738675" y="0.174488" />
+                                <point x="0.726937" y="0.5" />
+                                <point x="0.867794" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.128293" y="0.914051" />
+                                <point x="0.265238" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Tong_Anorganik" sid="705090076408570">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="852224657707122" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\assets real\tong_anorganik.png">
+                            <collision-poly>
+                                <point x="0.145" y="0.111538" />
+                                <point x="0.5" y="0.00769231" />
+                                <point x="0.855" y="0.111538" />
+                                <point x="0.945" y="0.957692" />
+                                <point x="0.5" y="0.988462" />
+                                <point x="0.06" y="0.953846" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Tong_Organik" sid="156943966302194">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="955296826173270" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\assets real\tong_organik.png">
+                            <collision-poly>
+                                <point x="0.14" y="0.107692" />
+                                <point x="0.5" y="0.00769231" />
+                                <point x="0.86" y="0.107692" />
+                                <point x="0.92" y="0.938462" />
+                                <point x="0.5" y="0.992308" />
+                                <point x="0.08" y="0.938462" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Gambar_SoalKuis" sid="617261636053842">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="783285874173408" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib_original.png">
+                            <collision-poly>
+                                <point x="0.259843" y="0.172775" />
+                                <point x="0.5" y="0.091623" />
+                                <point x="0.740157" y="0.172775" />
+                                <point x="0.728346" y="0.5" />
+                                <point x="0.870079" y="0.913613" />
+                                <point x="0.5" y="0.97644" />
+                                <point x="0.125984" y="0.91623" />
+                                <point x="0.26378" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib (1)_original.png">
+                            <collision-poly>
+                                <point x="0.261289" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.738711" y="0.174488" />
+                                <point x="0.726971" y="0.5" />
+                                <point x="0.867849" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.128237" y="0.914051" />
+                                <point x="0.265203" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_etgjz7etgjz7etgj (1)_original.png">
+                            <collision-poly>
+                                <point x="0.260742" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.739258" y="0.174488" />
+                                <point x="0.727491" y="0.5" />
+                                <point x="0.868693" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.127385" y="0.914051" />
+                                <point x="0.264664" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_etgjz7etgjz7etgj (2)_original.png">
+                            <collision-poly>
+                                <point x="0.262482" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.737518" y="0.174488" />
+                                <point x="0.725837" y="0.5" />
+                                <point x="0.866012" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.130094" y="0.914051" />
+                                <point x="0.266375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib (2)_original.png">
+                            <collision-poly>
+                                <point x="0.261522" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.738478" y="0.174488" />
+                                <point x="0.72675" y="0.5" />
+                                <point x="0.867491" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.1286" y="0.914051" />
+                                <point x="0.265431" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib (3)_original.png">
+                            <collision-poly>
+                                <point x="0.261325" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.738675" y="0.174488" />
+                                <point x="0.726937" y="0.5" />
+                                <point x="0.867794" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.128293" y="0.914051" />
+                                <point x="0.265238" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ObjekSampah" sid="975569939106437">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="DragDrop" sid="100450143883260">
+                        <behavior id="DragnDrop" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172756497749113" speed="0">
+                        <frame duration="1" hotspotX="0.673228" hotspotY="0.185864" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib_original.png">
+                            <collision-poly>
+                                <point x="0.259843" y="0.172775" />
+                                <point x="0.5" y="0.091623" />
+                                <point x="0.740157" y="0.172775" />
+                                <point x="0.728346" y="0.5" />
+                                <point x="0.870079" y="0.913613" />
+                                <point x="0.5" y="0.97644" />
+                                <point x="0.125984" y="0.91623" />
+                                <point x="0.26378" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_etgjz7etgjz7etgj (1)_original.png">
+                            <collision-poly>
+                                <point x="0.260742" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.739258" y="0.174488" />
+                                <point x="0.727491" y="0.5" />
+                                <point x="0.868693" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.127385" y="0.914051" />
+                                <point x="0.264664" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib (1)_original.png">
+                            <collision-poly>
+                                <point x="0.261289" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.738711" y="0.174488" />
+                                <point x="0.726971" y="0.5" />
+                                <point x="0.867849" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.128237" y="0.914051" />
+                                <point x="0.265203" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_etgjz7etgjz7etgj (2)_original.png">
+                            <collision-poly>
+                                <point x="0.262482" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.737518" y="0.174488" />
+                                <point x="0.725837" y="0.5" />
+                                <point x="0.866012" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.130094" y="0.914051" />
+                                <point x="0.266375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib (2)_original.png">
+                            <collision-poly>
+                                <point x="0.261522" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.738478" y="0.174488" />
+                                <point x="0.72675" y="0.5" />
+                                <point x="0.867491" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.1286" y="0.914051" />
+                                <point x="0.265431" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_hiiburhiiburhiib (3)_original.png">
+                            <collision-poly>
+                                <point x="0.261325" y="0.174488" />
+                                <point x="0.5" y="0.0937611" />
+                                <point x="0.738675" y="0.174488" />
+                                <point x="0.726937" y="0.5" />
+                                <point x="0.867794" y="0.911447" />
+                                <point x="0.5" y="0.973945" />
+                                <point x="0.128293" y="0.914051" />
+                                <point x="0.265238" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Gambar_IlustrasiMateri" sid="482548113205309">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="680865538860192" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Materi\25-11-2026_21-17-26_002_BG-1X1.png">
+                            <collision-poly>
+                                <point x="0.214286" y="0.618222" />
+                                <point x="0.5" y="0" />
+                                <point x="0.97619" y="0" />
+                                <point x="0.965608" y="1" />
+                                <point x="0.5" y="0" />
+                                <point x="0.021164" y="1" />
+                                <point x="0.214286" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.503846" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Materi\25-11-2026_21-17-26_003_BG-1X1.png">
+                            <collision-poly>
+                                <point x="0.146787" y="0.134395" />
+                                <point x="0.5" y="0" />
+                                <point x="0.845246" y="0.14379" />
+                                <point x="0.956787" y="0.503937" />
+                                <point x="0.922263" y="0.954903" />
+                                <point x="0.5" y="0.49141" />
+                                <point x="0.494689" y="0.463225" />
+                                <point x="0.00337658" y="0.503937" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Materi\25-11-2026_21-17-26_001_BG-1X1.png">
+                            <collision-poly>
+                                <point x="0.304132" y="0.413687" />
+                                <point x="0.5" y="0" />
+                                <point x="0.935668" y="0" />
+                                <point x="0.970448" y="0.501129" />
+                                <point x="0.94116" y="1" />
+                                <point x="0.5" y="0" />
+                                <point x="0.283997" y="0.630391" />
+                                <point x="0.0734847" y="0.501129" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Materi\25-11-2026_21-17-27_004_BG-1X1.png">
+                            <collision-poly>
+                                <point x="0.0423197" y="0" />
+                                <point x="0.5" y="0" />
+                                <point x="0.88558" y="0" />
+                                <point x="0.970219" y="0.5" />
+                                <point x="0.92163" y="1" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0172414" y="1" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Pendukung">
+            <object-type name="Karakter_Menu" sid="235811306994155">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="225874678182844" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\assets real\karakter_siswa_melambai_simulasi.png">
+                            <collision-poly>
+                                <point x="0.203846" y="0.139474" />
+                                <point x="0.5" y="0.00526316" />
+                                <point x="0.788462" y="0.144737" />
+                                <point x="0.703846" y="0.5" />
+                                <point x="0.688462" y="0.786842" />
+                                <point x="0.5" y="0.818421" />
+                                <point x="0.303846" y="0.792105" />
+                                <point x="0.292308" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Ikon_Speaker_SFX" sid="119641025000417">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="971199683086800" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (1)_1x1.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.00612245" />
+                                <point x="0.838558" y="0.0591837" />
+                                <point x="0.998433" y="0.5" />
+                                <point x="0.833856" y="0.934694" />
+                                <point x="0.5" y="0.993878" />
+                                <point x="0.0015674" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Hati_1" sid="353448796216708">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="945145366657443" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (3)_original.png">
+                            <collision-poly>
+                                <point x="0.0890052" y="0.10241" />
+                                <point x="0.5" y="0.11747" />
+                                <point x="0.910995" y="0.10241" />
+                                <point x="0.979058" y="0.5" />
+                                <point x="0.814136" y="0.786145" />
+                                <point x="0.5" y="0.996988" />
+                                <point x="0.185864" y="0.786145" />
+                                <point x="0.0209424" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (4)_original.png">
+                            <collision-poly>
+                                <point x="0.091157" y="0.104721" />
+                                <point x="0.5" y="0.119694" />
+                                <point x="0.908843" y="0.104721" />
+                                <point x="0.97655" y="0.5" />
+                                <point x="0.812491" y="0.784481" />
+                                <point x="0.5" y="0.994098" />
+                                <point x="0.187509" y="0.784481" />
+                                <point x="0.0234506" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Hati_2" sid="178335016035073">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="290064943809322" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (3)_original.png">
+                            <collision-poly>
+                                <point x="0.0890052" y="0.10241" />
+                                <point x="0.5" y="0.11747" />
+                                <point x="0.910995" y="0.10241" />
+                                <point x="0.979058" y="0.5" />
+                                <point x="0.814136" y="0.786145" />
+                                <point x="0.5" y="0.996988" />
+                                <point x="0.185864" y="0.786145" />
+                                <point x="0.0209424" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (4)_original.png">
+                            <collision-poly>
+                                <point x="0.091157" y="0.104721" />
+                                <point x="0.5" y="0.119694" />
+                                <point x="0.908843" y="0.104721" />
+                                <point x="0.97655" y="0.5" />
+                                <point x="0.812491" y="0.784481" />
+                                <point x="0.5" y="0.994098" />
+                                <point x="0.187509" y="0.784481" />
+                                <point x="0.0234506" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Hati_3" sid="169730431422456">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="169210435674588" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (3)_original.png">
+                            <collision-poly>
+                                <point x="0.0890052" y="0.10241" />
+                                <point x="0.5" y="0.11747" />
+                                <point x="0.910995" y="0.10241" />
+                                <point x="0.979058" y="0.5" />
+                                <point x="0.814136" y="0.786145" />
+                                <point x="0.5" y="0.996988" />
+                                <point x="0.185864" y="0.786145" />
+                                <point x="0.0209424" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (4)_original.png">
+                            <collision-poly>
+                                <point x="0.091157" y="0.104721" />
+                                <point x="0.5" y="0.119694" />
+                                <point x="0.908843" y="0.104721" />
+                                <point x="0.97655" y="0.5" />
+                                <point x="0.812491" y="0.784481" />
+                                <point x="0.5" y="0.994098" />
+                                <point x="0.187509" y="0.784481" />
+                                <point x="0.0234506" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Siswa_Depan" sid="256815841644808">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="168358676743106" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\assets real\karakter_siswa_depan_1_simulasi.png">
+                            <collision-poly>
+                                <point x="0.0416667" y="0.164557" />
+                                <point x="0.5" y="0.00632911" />
+                                <point x="0.944444" y="0.170886" />
+                                <point x="0.805556" y="0.5" />
+                                <point x="0.777778" y="0.753165" />
+                                <point x="0.5" y="0.816456" />
+                                <point x="0.222222" y="0.753165" />
+                                <point x="0.194444" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Siswa_Samping" sid="177996529367796">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="962285274890339" speed="0">
+                        <frame duration="1" hotspotX="0.50303" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\assets real\karakter_siswa_jalan_samping_menu.png">
+                            <collision-poly>
+                                <point x="0.793939" y="0.5" />
+                                <point x="0.793939" y="0.78836" />
+                                <point x="0.49697" y="0.854497" />
+                                <point x="0.218182" y="0.780423" />
+                                <point x="0.321212" y="0.5" />
+                                <point x="0.030303" y="0.137566" />
+                                <point x="0.49697" y="0.0026455" />
+                                <point x="0.963636" y="0.137566" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.50303" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.0363637" y="0.137566" />
+                                <point x="0.50303" y="0.0026455" />
+                                <point x="0.969697" y="0.137566" />
+                                <point x="0.678788" y="0.5" />
+                                <point x="0.781818" y="0.780423" />
+                                <point x="0.50303" y="0.854497" />
+                                <point x="0.206061" y="0.78836" />
+                                <point x="0.206061" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Hitbox_Siswa" sid="924847215211987">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="8Direction" sid="320610735520249">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="454261035783427">
+                        <behavior id="bound" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="225464017432084" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bintang_Level1" sid="738395347632339">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="739002974129294" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_0_original.png">
+                            <collision-poly>
+                                <point x="0.0994764" y="0.25" />
+                                <point x="0.5" y="0.171053" />
+                                <point x="0.900524" y="0.25" />
+                                <point x="0.931937" y="0.5" />
+                                <point x="0.926702" y="0.815789" />
+                                <point x="0.5" y="0.888158" />
+                                <point x="0.0732984" y="0.815789" />
+                                <point x="0.0680628" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_1_original.png">
+                            <collision-poly>
+                                <point x="0.101573" y="0.253289" />
+                                <point x="0.5" y="0.175381" />
+                                <point x="0.898427" y="0.253289" />
+                                <point x="0.929676" y="0.5" />
+                                <point x="0.924468" y="0.811634" />
+                                <point x="0.5" y="0.883051" />
+                                <point x="0.0755325" y="0.811634" />
+                                <point x="0.0703243" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_2_original.png">
+                            <collision-poly>
+                                <point x="0.103659" y="0.256536" />
+                                <point x="0.5" y="0.179652" />
+                                <point x="0.89634" y="0.256536" />
+                                <point x="0.927426" y="0.5" />
+                                <point x="0.922245" y="0.807534" />
+                                <point x="0.5" y="0.87801" />
+                                <point x="0.0777548" y="0.807534" />
+                                <point x="0.0725739" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_3_original.png">
+                            <collision-poly>
+                                <point x="0.0994764" y="0.25" />
+                                <point x="0.5" y="0.177632" />
+                                <point x="0.900524" y="0.25" />
+                                <point x="0.937173" y="0.5" />
+                                <point x="0.921466" y="0.802632" />
+                                <point x="0.5" y="0.881579" />
+                                <point x="0.0732984" y="0.815789" />
+                                <point x="0.0602094" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bintang_Level2" sid="591074020694627">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="792104175069615" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_0_original.png">
+                            <collision-poly>
+                                <point x="0.0994764" y="0.25" />
+                                <point x="0.5" y="0.171053" />
+                                <point x="0.900524" y="0.25" />
+                                <point x="0.931937" y="0.5" />
+                                <point x="0.926702" y="0.815789" />
+                                <point x="0.5" y="0.888158" />
+                                <point x="0.0732984" y="0.815789" />
+                                <point x="0.0680628" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_1_original.png">
+                            <collision-poly>
+                                <point x="0.101573" y="0.253289" />
+                                <point x="0.5" y="0.175381" />
+                                <point x="0.898427" y="0.253289" />
+                                <point x="0.929676" y="0.5" />
+                                <point x="0.924468" y="0.811634" />
+                                <point x="0.5" y="0.883051" />
+                                <point x="0.0755325" y="0.811634" />
+                                <point x="0.0703243" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_2_original.png">
+                            <collision-poly>
+                                <point x="0.103659" y="0.256536" />
+                                <point x="0.5" y="0.179652" />
+                                <point x="0.89634" y="0.256536" />
+                                <point x="0.927426" y="0.5" />
+                                <point x="0.922245" y="0.807534" />
+                                <point x="0.5" y="0.87801" />
+                                <point x="0.0777548" y="0.807534" />
+                                <point x="0.0725739" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_3_original.png">
+                            <collision-poly>
+                                <point x="0.0994764" y="0.25" />
+                                <point x="0.5" y="0.177632" />
+                                <point x="0.900524" y="0.25" />
+                                <point x="0.937173" y="0.5" />
+                                <point x="0.921466" y="0.802632" />
+                                <point x="0.5" y="0.881579" />
+                                <point x="0.0732984" y="0.815789" />
+                                <point x="0.0602094" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bintang_Level3" sid="115236145194962">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="665484779060118" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_0_original.png">
+                            <collision-poly>
+                                <point x="0.0994764" y="0.25" />
+                                <point x="0.5" y="0.171053" />
+                                <point x="0.900524" y="0.25" />
+                                <point x="0.931937" y="0.5" />
+                                <point x="0.926702" y="0.815789" />
+                                <point x="0.5" y="0.888158" />
+                                <point x="0.0732984" y="0.815789" />
+                                <point x="0.0680628" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_1_original.png">
+                            <collision-poly>
+                                <point x="0.101573" y="0.253289" />
+                                <point x="0.5" y="0.175381" />
+                                <point x="0.898427" y="0.253289" />
+                                <point x="0.929676" y="0.5" />
+                                <point x="0.924468" y="0.811634" />
+                                <point x="0.5" y="0.883051" />
+                                <point x="0.0755325" y="0.811634" />
+                                <point x="0.0703243" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_2_original.png">
+                            <collision-poly>
+                                <point x="0.103659" y="0.256536" />
+                                <point x="0.5" y="0.179652" />
+                                <point x="0.89634" y="0.256536" />
+                                <point x="0.927426" y="0.5" />
+                                <point x="0.922245" y="0.807534" />
+                                <point x="0.5" y="0.87801" />
+                                <point x="0.0777548" y="0.807534" />
+                                <point x="0.0725739" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_3_original.png">
+                            <collision-poly>
+                                <point x="0.0994764" y="0.25" />
+                                <point x="0.5" y="0.177632" />
+                                <point x="0.900524" y="0.25" />
+                                <point x="0.937173" y="0.5" />
+                                <point x="0.921466" y="0.802632" />
+                                <point x="0.5" y="0.881579" />
+                                <point x="0.0732984" y="0.815789" />
+                                <point x="0.0602094" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Gembok_Level2" sid="203405927385400">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="278048260085071" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\Gemini_Generated_Image_rk1lovrk1lovrk1l (5)_original.png">
+                            <collision-poly>
+                                <point x="0.176056" y="0.13089" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.823944" y="0.13089" />
+                                <point x="0.996479" y="0.5" />
+                                <point x="0.950704" y="0.963351" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.0492958" y="0.963351" />
+                                <point x="0.00352113" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Gembok_Level3" sid="926228424137714">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="413354847745074" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\Gemini_Generated_Image_rk1lovrk1lovrk1l (5)_original.png">
+                            <collision-poly>
+                                <point x="0.176056" y="0.13089" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.823944" y="0.13089" />
+                                <point x="0.996479" y="0.5" />
+                                <point x="0.950704" y="0.963351" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.0492958" y="0.963351" />
+                                <point x="0.00352113" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bintang_Hasil" sid="430150387684569">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="171408702071796" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_0_original.png">
+                            <collision-poly>
+                                <point x="0.0994764" y="0.25" />
+                                <point x="0.5" y="0.171053" />
+                                <point x="0.900524" y="0.25" />
+                                <point x="0.931937" y="0.5" />
+                                <point x="0.926702" y="0.815789" />
+                                <point x="0.5" y="0.888158" />
+                                <point x="0.0732984" y="0.815789" />
+                                <point x="0.0680628" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_1_original.png">
+                            <collision-poly>
+                                <point x="0.101573" y="0.253289" />
+                                <point x="0.5" y="0.175381" />
+                                <point x="0.898427" y="0.253289" />
+                                <point x="0.929676" y="0.5" />
+                                <point x="0.924468" y="0.811634" />
+                                <point x="0.5" y="0.883051" />
+                                <point x="0.0755325" y="0.811634" />
+                                <point x="0.0703243" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_2_original.png">
+                            <collision-poly>
+                                <point x="0.103659" y="0.256536" />
+                                <point x="0.5" y="0.179652" />
+                                <point x="0.89634" y="0.256536" />
+                                <point x="0.927426" y="0.5" />
+                                <point x="0.922245" y="0.807534" />
+                                <point x="0.5" y="0.87801" />
+                                <point x="0.0777548" y="0.807534" />
+                                <point x="0.0725739" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_PilihLevel\rating_bintang_3_original.png">
+                            <collision-poly>
+                                <point x="0.0994764" y="0.25" />
+                                <point x="0.5" y="0.177632" />
+                                <point x="0.900524" y="0.25" />
+                                <point x="0.937173" y="0.5" />
+                                <point x="0.921466" y="0.802632" />
+                                <point x="0.5" y="0.881579" />
+                                <point x="0.0732984" y="0.815789" />
+                                <point x="0.0602094" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Text">
+            <object-type name="Txt_IsiCredits" sid="408647702349490">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_JudulCredits" sid="121892839893721">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_SFX" sid="889753966093940">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_BGM" sid="290473567755548">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Teks_JudulHasilSim" sid="903936516815513">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Teks_MisiSim" sid="235388261743728">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Teks_SkorHasilSim" sid="263008538834708">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Teks_SkorSim" sid="932779698359571">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_NomorSoal" sid="694819757253504">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_LabelSuara" sid="342675589980201">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_Timer" sid="343783889927859">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_SoalKuis" sid="670097795823793">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_IsiFeedback" sid="610612145253873">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_InstruksiDD" sid="105937449589604">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_JudulFeedback" sid="959050673761160">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_OpsiC" sid="314256998567748">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_SkorGame" sid="722240626875698">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_OpsiA" sid="683212512891123">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_LabelPause" sid="847639506487081">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_OpsiB" sid="312160489750228">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_JumlahBenar" sid="645107335552059">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_SkorAkhir" sid="379846407710086">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_JumlahSalah" sid="670420383352761">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_HalamanMateri" sid="313780339774356">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_SubjudulMateri" sid="703395066449053">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Txt_IsiMateri" sid="547256284553181">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Popup">
+            <object-type name="Popup_ResetSkor" sid="113969304904787">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="264834107322547" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_zdvu68zdvu68zdvu (2)_tight.png">
+                            <collision-poly>
+                                <point x="0.00420168" y="0.219577" />
+                                <point x="0.5" y="0.0026455" />
+                                <point x="0.995798" y="0.219577" />
+                                <point x="0.995798" y="0.780423" />
+                                <point x="0.5" y="0.997355" />
+                                <point x="0.00420168" y="0.780423" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Popup_CaraBermain" sid="277271085345480">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="577206453514026" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.500952" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_zdvu68zdvu68zdvu_1x1.png">
+                            <collision-poly>
+                                <point x="0.148903" y="0.0742857" />
+                                <point x="0.5" y="0.0228571" />
+                                <point x="0.851097" y="0.0742857" />
+                                <point x="0.998433" y="0.500952" />
+                                <point x="0.905956" y="0.994286" />
+                                <point x="0.0940439" y="0.994286" />
+                                <point x="0.0031348" y="0.500952" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Panel_Feedback" sid="907427553172013">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="961194733871961" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (9)_original.png">
+                            <collision-poly>
+                                <point x="0.0529595" y="0.0934066" />
+                                <point x="0.5" y="0.0549451" />
+                                <point x="0.94704" y="0.0934066" />
+                                <point x="0.998442" y="0.5" />
+                                <point x="0.96729" y="0.942308" />
+                                <point x="0.5" y="0.997253" />
+                                <point x="0.0327103" y="0.942308" />
+                                <point x="0.00155763" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Panel">
+            <object-type name="Panel_Papan_Tulis" sid="690148293209290">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="509716007346221" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\output_png\Gemini_Generated_Image_q4d2waq4d2waq4d2_tight.png">
+                            <collision-poly>
+                                <point x="0.06875" y="0.115789" />
+                                <point x="0.5" y="0.00526316" />
+                                <point x="0.929688" y="0.118421" />
+                                <point x="0.95" y="0.915789" />
+                                <point x="0.5" y="0.957895" />
+                                <point x="0.0484375" y="0.918421" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Panel_Pause" sid="839398021789136">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="994046405736622" speed="5">
+                        <frame duration="1" hotspotX="0.503597" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg_original.png">
+                            <collision-poly>
+                                <point x="0.0551559" y="0.121118" />
+                                <point x="0.503597" y="0.0310559" />
+                                <point x="0.952038" y="0.121118" />
+                                <point x="0.983213" y="0.5" />
+                                <point x="0.980815" y="0.916149" />
+                                <point x="0.503597" y="0.990683" />
+                                <point x="0.00959233" y="0.937888" />
+                                <point x="0.00719424" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Hud_SkorSim" sid="939242182889853">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="889925669429868" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_1tm4wa1tm4wa1tm4 (2)_original.png">
+                            <collision-poly>
+                                <point x="0.149215" y="0.149215" />
+                                <point x="0.5" y="0.0026178" />
+                                <point x="0.850785" y="0.149215" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.848168" y="0.848168" />
+                                <point x="0.5" y="0.997382" />
+                                <point x="0.151832" y="0.848168" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Hud_WadahHati" sid="393008186685098">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="468234683909002" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_16wih016wih016wi (1)_original.png">
+                            <collision-poly>
+                                <point x="0.50223" y="0.0198715" />
+                                <point x="0.992921" y="0.5" />
+                                <point x="0.50223" y="0.980128" />
+                                <point x="0.00707863" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Hud_PilSoal" sid="997057588559618">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="505007161180087" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Gemini_Generated_Image_qj52fiqj52fiqj52 (9)_original.png">
+                            <collision-poly>
+                                <point x="0.0447368" y="0.137097" />
+                                <point x="0.5" y="0" />
+                                <point x="0.957895" y="0.129032" />
+                                <point x="1" y="0.5" />
+                                <point x="0.955263" y="0.862903" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0473684" y="0.854839" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Hud_Timer" sid="946133929502706">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="557891365154154" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Gemini_Generated_Image (3)_original.png">
+                            <collision-poly>
+                                <point x="0.0209424" y="0.0689655" />
+                                <point x="0.5" y="0.198276" />
+                                <point x="0.937173" y="0.206897" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.934555" y="0.784483" />
+                                <point x="0.0549738" y="0.818965" />
+                                <point x="0.0209424" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Hud_Skor" sid="252793289605401">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="913157280128405" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Gemini_Generated_Image (4)_original.png">
+                            <collision-poly>
+                                <point x="0.0890052" y="0.288136" />
+                                <point x="0.5" y="0.186441" />
+                                <point x="0.934555" y="0.211864" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.947644" y="0.830508" />
+                                <point x="0.5" y="0.881356" />
+                                <point x="0.0549738" y="0.822034" />
+                                <point x="0.0209424" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Papan_InstruksiDD" sid="633975804913911">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="817055204407314" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Gameplay\Gemini_Generated_Image (2)_original.png">
+                            <collision-poly>
+                                <point x="0.00261778" y="0.00609756" />
+                                <point x="0.5" y="0.0243902" />
+                                <point x="0.997382" y="0.00609756" />
+                                <point x="0.997382" y="0.993902" />
+                                <point x="0.00261778" y="0.993902" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Pil_Salah" sid="247262171828407">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="297579577677618" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\25-11-2026_03-23-32_003_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="0.0314136" y="0.0967742" />
+                                <point x="0.5" y="0.00806452" />
+                                <point x="0.968586" y="0.0967742" />
+                                <point x="0.997382" y="0.5" />
+                                <point x="0.97644" y="0.927419" />
+                                <point x="0.5" y="0.991935" />
+                                <point x="0.0235602" y="0.927419" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Pil_Benar" sid="486926827386714">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="720227781781732" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Hasil\25-11-2026_03-23-32_005_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="0.0628272" y="0.164384" />
+                                <point x="0.5" y="0.157534" />
+                                <point x="0.968586" y="0.0821918" />
+                                <point x="0.942408" y="0.5" />
+                                <point x="0.939791" y="0.842466" />
+                                <point x="0.5" y="0.993151" />
+                                <point x="0.0235602" y="0.938356" />
+                                <point x="0.0026178" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Panel_Materi" sid="191274479095773">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="542141039302548" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Materi\25-11-2026_21-18-04_001_BG-ORIG.png">
+                            <collision-poly>
+                                <point x="0.0125" y="0.0246914" />
+                                <point x="0.5" y="0" />
+                                <point x="0.9875" y="0.0246914" />
+                                <point x="1" y="0.5" />
+                                <point x="0.9875" y="0.975309" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0125" y="0.975309" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Toggle">
+            <object-type name="Toggle_SFX" sid="960520433067666">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="242427971492286" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501493" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (5)_1x1.png">
+                            <collision-poly>
+                                <point x="0.239812" y="0.00597015" />
+                                <point x="0.760188" y="0.00597015" />
+                                <point x="0.998433" y="0.501493" />
+                                <point x="0.758621" y="0.99403" />
+                                <point x="0.241379" y="0.99403" />
+                                <point x="0.0015674" y="0.501493" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501567" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (2)_tight.png">
+                            <collision-poly>
+                                <point x="0.249216" y="0.30303" />
+                                <point x="0.750784" y="0.30303" />
+                                <point x="0.750784" y="0.30303" />
+                                <point x="0.750784" y="0.700105" />
+                                <point x="0.750784" y="0.700105" />
+                                <point x="0.750784" y="0.700105" />
+                                <point x="0.249216" y="0.700105" />
+                                <point x="0.249216" y="0.700105" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Toggle_BGM" sid="501840668564009">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="950339395003077" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501493" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (5)_1x1.png">
+                            <collision-poly>
+                                <point x="0.239812" y="0.00597015" />
+                                <point x="0.760188" y="0.00597015" />
+                                <point x="0.998433" y="0.501493" />
+                                <point x="0.758621" y="0.99403" />
+                                <point x="0.241379" y="0.99403" />
+                                <point x="0.0015674" y="0.501493" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501567" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (2)_tight.png">
+                            <collision-poly>
+                                <point x="0.249216" y="0.30303" />
+                                <point x="0.750784" y="0.30303" />
+                                <point x="0.750784" y="0.30303" />
+                                <point x="0.750784" y="0.700105" />
+                                <point x="0.750784" y="0.700105" />
+                                <point x="0.750784" y="0.700105" />
+                                <point x="0.249216" y="0.700105" />
+                                <point x="0.249216" y="0.700105" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Panah_Atas" sid="681056887517235">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="179836453471937" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_25irj725irj725ir_original.png">
+                            <collision-poly>
+                                <point x="0.14999" y="0.148447" />
+                                <point x="0.5" y="0.0052219" />
+                                <point x="0.85001" y="0.148447" />
+                                <point x="0.994751" y="0.5" />
+                                <point x="0.847378" y="0.848949" />
+                                <point x="0.5" y="0.994778" />
+                                <point x="0.152622" y="0.848949" />
+                                <point x="0.00524945" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Panah_Kanan" sid="899657649389495">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="912495697581532" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_25irj725irj725ir_original.png">
+                            <collision-poly>
+                                <point x="0.14999" y="0.148447" />
+                                <point x="0.5" y="0.0052219" />
+                                <point x="0.85001" y="0.148447" />
+                                <point x="0.994751" y="0.5" />
+                                <point x="0.847378" y="0.848948" />
+                                <point x="0.5" y="0.994778" />
+                                <point x="0.152622" y="0.848948" />
+                                <point x="0.00524945" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Panah_Bawah" sid="895579216673221">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="458063249721879" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_25irj725irj725ir_original.png">
+                            <collision-poly>
+                                <point x="0.14999" y="0.148447" />
+                                <point x="0.5" y="0.0052219" />
+                                <point x="0.85001" y="0.148447" />
+                                <point x="0.994751" y="0.5" />
+                                <point x="0.847378" y="0.848948" />
+                                <point x="0.5" y="0.994778" />
+                                <point x="0.152622" y="0.848948" />
+                                <point x="0.00524945" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Panah_Kiri" sid="491164636963254">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="969545085410699" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Simulasi\Gemini_Generated_Image_25irj725irj725ir_original.png">
+                            <collision-poly>
+                                <point x="0.14999" y="0.148447" />
+                                <point x="0.5" y="0.0052219" />
+                                <point x="0.85001" y="0.148447" />
+                                <point x="0.994751" y="0.5" />
+                                <point x="0.847378" y="0.848948" />
+                                <point x="0.5" y="0.994778" />
+                                <point x="0.152622" y="0.848948" />
+                                <point x="0.00524945" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Global">
+            <object-type name="Audio" sid="937033071046987">
+                <plugin id="Audio" />
+            </object-type>
+            <object-type name="Browser" sid="179999429335339">
+                <plugin id="Browser" />
+            </object-type>
+            <object-type name="LocalStorage" sid="213872883726083">
+                <plugin id="LocalStorage" />
+            </object-type>
+            <object-type name="Touch" sid="321424948751076">
+                <plugin id="Touch" />
+            </object-type>
+        </object-folder>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout_Menu.xml</layout>
+        <layout>Layout_Simulasi.xml</layout>
+        <layout>Layout_Materi.xml</layout>
+        <layout>Layout_PilihLevel.xml</layout>
+        <layout>Layout_Gameplay.xml</layout>
+        <layout>Layout_Pengaturan.xml</layout>
+        <layout>Layout_Credits.xml</layout>
+        <layout>Layout_Hasil.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>ES_Menu.xml</event-sheet>
+        <event-sheet>ES_Materi.xml</event-sheet>
+        <event-sheet>ES_Simulasi.xml</event-sheet>
+        <event-sheet>ES_PilihLevel.xml</event-sheet>
+        <event-sheet>ES_Gameplay.xml</event-sheet>
+        <event-sheet>ES_Pengaturan.xml</event-sheet>
+        <event-sheet>ES_Credits.xml</event-sheet>
+        <event-sheet>ES_Hasil.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="11">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Browser" uid="12" />
+        <global-instance type="Audio" uid="37">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="LocalStorage" uid="38" />
+    </global-instances>
+    <sounds-folder>
+        <file name="bgm_simulasi.m4a" />
+        <file name="bgm_simulasi.ogg" />
+        <file name="sfx_berhasil.m4a" />
+        <file name="sfx_berhasil.ogg" />
+        <file name="sfx_error.m4a" />
+        <file name="sfx_error.ogg" />
+        <file name="sfx_kalah.m4a" />
+        <file name="sfx_kalah.ogg" />
+        <file name="sfx_selesai.m4a" />
+        <file name="sfx_selesai.ogg" />
+        <file name="bgm.m4a" />
+        <file name="bgm.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

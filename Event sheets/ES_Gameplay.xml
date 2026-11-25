@@ -1,0 +1,1963 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES_Gameplay</name>
+    <events>
+        <variable comment="Urutan soal aktif dari 1 sampai 10." constant="0" name="NomorSoal" sid="597760955160266" static="0" type="number">1</variable>
+        <variable comment="Sisa waktu hitung mundur per soal dalam detik." constant="0" name="WaktuSoal" sid="186498527327889" static="0" type="number">25</variable>
+        <variable comment="0 untuk Level 1 (tanpa batas waktu/santai), 25 untuk Level 2 (Sedang), 15 untuk Level 3 (Sulit)." constant="0" name="BatasWaktuLevel" sid="530363689318903" static="0" type="number">0</variable>
+        <variable comment="Pengunci agar soal tidak bisa dijawab 2 kali (0 = sedang mengerjakan, 1 = sudah dijawab / pop-up aktif)." constant="0" name="StatusJawab" sid="543635636450845" static="0" type="number">0</variable>
+        <variable comment="Menghitung total jawaban benar (0–10) untuk ditampilkan di Layout_Hasil." constant="0" name="JumlahBenar" sid="751847993907981" static="0" type="number">0</variable>
+        <variable comment="Menghitung total jawaban salah (0–10) untuk ditampilkan di Layout_Hasil." constant="0" name="JumlahSalah" sid="770353838142255" static="0" type="number">0</variable>
+        <variable comment='Menyimpan kunci jawaban kuis pilihan ganda (&quot;A&quot;, &quot;B&quot;, atau &quot;C&quot;).' constant="0" name="KunciPilgan" sid="395739150956405" static="0" type="text">A</variable>
+        <variable comment="Menyimpan kalimat penjelasan edukatif yang muncul di Txt_IsiFeedback." constant="0" name="PenjelasanSoal" sid="227873154880327" static="0" type="text"></variable>
+        <event-block sid="870648606106843">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="242177190079306" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="492297935519973" type="System">
+                    <param id="0" name="Variable">DBSkor</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="533128808485892" type="System">
+                    <param id="0" name="Variable">NomorSoal</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="106215345106285" type="System">
+                    <param id="0" name="Variable">JumlahBenar</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="717202723629907" type="System">
+                    <param id="0" name="Variable">JumlahSalah</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="915948179115809" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="608327467227781" type="System">
+                    <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="137413984496368" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="6" name="Stop" sid="843007132479564" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="229677685379460" type="Layar_Gelap">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="167806288638382">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="765262750863581" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="774135550150830" type="Btn_SuaraGame">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="840366101695938" type="Audio">
+                            <param id="0" name="Audio file">bgm</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm_game&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="109046679793069">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="851250914875878" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="499950026272806" type="Btn_SuaraGame">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="6" name="Stop" sid="855199145985204" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm_game&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="683822530125532">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="448717356562972" type="System">
+                            <param id="0" name="Variable">DBLevelDipilih</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="908837409258024" type="System">
+                            <param id="0" name="Variable">BatasWaktuLevel</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="126851648088296" type="Txt_Timer">
+                            <param id="0" name="Text">&quot;SANTAI&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="615835036866822">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="574242976484520" type="System">
+                            <param id="0" name="Variable">DBLevelDipilih</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="788152313201466" type="System">
+                            <param id="0" name="Variable">BatasWaktuLevel</param>
+                            <param id="1" name="Value">25</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="331874975363342" type="System">
+                            <param id="0" name="Variable">WaktuSoal</param>
+                            <param id="1" name="Value">25</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="369095865963255">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="879680703610127" type="System">
+                            <param id="0" name="Variable">DBLevelDipilih</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="161095253797059" type="System">
+                            <param id="0" name="Variable">BatasWaktuLevel</param>
+                            <param id="1" name="Value">15</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="395034476612060" type="System">
+                            <param id="0" name="Variable">WaktuSoal</param>
+                            <param id="1" name="Value">15</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="971926941903898">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="893371365617158" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="553992477237840" type="Txt_NomorSoal">
+                    <param id="0" name="Text">&quot;SOAL &quot; &amp; NomorSoal &amp; &quot;/10&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="121872350523828" type="Txt_SkorGame">
+                    <param id="0" name="Text">&quot;SKOR: &quot; &amp; DBSkor</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="721832781721114">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="610678463525956" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="384230428269525" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="480944119003276" type="System">
+                    <param id="0" name="Variable">WaktuSoal</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="984980701956886" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="443827034736025" type="System">
+                    <param id="0" name="Variable">BatasWaktuLevel</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="671974241389770" type="System">
+                    <param id="0" name="Variable">WaktuSoal</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="830783195164042" type="Txt_Timer">
+                    <param id="0" name="Text">&quot;00:&quot; &amp; zeropad(WaktuSoal, 2)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="385484382972031">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="919345064939401" type="System">
+                    <param id="0" name="Variable">BatasWaktuLevel</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="792610666228176" type="System">
+                    <param id="0" name="Variable">WaktuSoal</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="172895617754760" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="154858996338002" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="255096789039874" type="System">
+                    <param id="0" name="Variable">JumlahSalah</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="369785013812305" type="Txt_JudulFeedback">
+                    <param id="0" name="Text">&quot;WAKTU HABIS!&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="255982767237146" type="Txt_IsiFeedback">
+                    <param id="0" name="Text">&quot;Ayo lebih cepat memilah sampah pada soal berikutnya!&quot;</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="530684083016265" type="System">
+                    <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="929165675398716">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="374777154151442" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="747505028451004" type="Audio">
+                            <param id="0" name="Audio file">sfx_error</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="104448654870129">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="384618483807618" type="System">
+                    <param id="0" name="Variable">NomorSoal</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="846568847263421" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="585729695246405" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="461000706127411" type="System">
+                    <param id="0" name="Layer">&quot;Kuis&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="745121619360005" type="System">
+                    <param id="0" name="Layer">&quot;DragDrop&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-3" name="Set position" sid="704900861842073" type="ObjekSampah">
+                    <param id="0" name="X">640</param>
+                    <param id="1" name="Y">355</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="806965684713124">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="611245686486501" type="System">
+                            <param id="0" name="Variable">DBLevelDipilih</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="661029200004905">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="961183346319892" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="470616913838454" type="ObjekSampah">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="251018443466239" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Kulit pisang berasal dari buah sehingga mudah membusuk dan masuk Tong Organik.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="134229764267502">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="690462009078292" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="134153840801388" type="ObjekSampah">
+                                    <param id="0" name="Frame number">3</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="656446141034367" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Botol plastik sangat sulit terurai di tanah sehingga harus masuk Tong Anorganik.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="161050639227791">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="673249818173448" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="712879265551963" type="ObjekSampah">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="641982608455672" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Daun kering mudah terurai secara alami dan bisa diolah menjadi pupuk kompos.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="132053270698678">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="198927315267311" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="951568102575735" type="ObjekSampah">
+                                    <param id="0" name="Frame number">5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="405446207472733" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Kantong plastik terbuat dari bahan sintetis sehingga termasuk sampah anorganik.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="709881205170976">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="413483479927156" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="781492830656833" type="ObjekSampah">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="697797982963306" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Sisa potongan buah apel merupakan sampah organik yang ramah lingkungan.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="637537339535469">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="633700811729229" type="System">
+                            <param id="0" name="Variable">DBLevelDipilih</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="784465740739471">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="235644819053762" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="852868534196179" type="ObjekSampah">
+                                    <param id="0" name="Frame number">4</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="412832865251424" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Kaleng logam tidak dapat membusuk, tetapi bisa didaur ulang di Tong Anorganik.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="582156584199480">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="530355030547831" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="135329915650803" type="ObjekSampah">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="708755503132408" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Sisa makanan dan buah cepat diuraikan mikroorganisme di dalam tanah.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="465265353522998">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="262686546747331" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="660015843928045" type="ObjekSampah">
+                                    <param id="0" name="Frame number">3</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="676871446130340" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Botol plastik bekas minum masuk ke Tong Kuning agar bisa didaur ulang.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="768471565427808">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="834292569059369" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="290859067619571" type="ObjekSampah">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="943591156614953" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Daun kering yang gugur di halaman sekolah termasuk sampah organik.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="477648908639967">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="460771619188961" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="317994328868862" type="ObjekSampah">
+                                    <param id="0" name="Frame number">5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="935415080649859" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Kantong plastik butuh puluhan tahun untuk hancur sehingga masuk Tong Anorganik.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="850193165022858">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="785500737145625" type="System">
+                            <param id="0" name="Variable">DBLevelDipilih</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="740912968950738">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="223076597543461" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="225942822787142" type="ObjekSampah">
+                                    <param id="0" name="Frame number">5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="927947897861132" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Kantong plastik sekali pakai mencemari tanah jika tidak dipilah ke Tong Kuning.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="697101448086884">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="795684576900618" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="878688799797772" type="ObjekSampah">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="452018743972414" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Daun kering adalah bahan baku utama pembuatan pupuk kompos di sekolah.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="388838842470691">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="873458923821053" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="959194195810826" type="ObjekSampah">
+                                    <param id="0" name="Frame number">4</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="215349643538748" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Kaleng bekas minuman termasuk sampah anorganik berbahan logam.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="172682464075144">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="918605037522169" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="100045863126358" type="ObjekSampah">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="110492036048824" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Kulit pisang termasuk sampah organik basah yang mudah terurai.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="866071713628923">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="229204148729749" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="715496883175780" type="ObjekSampah">
+                                    <param id="0" name="Frame number">3</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="507037320566588" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Botol plastik dapat dimanfaatkan kembali (Reuse) atau didaur ulang (Recycle).&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="858290391762647">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="759089052993620" type="System">
+                    <param id="0" name="Variable">NomorSoal</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">6</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="821516302584908" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="621893232905499" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="992164473354400" type="System">
+                    <param id="0" name="Layer">&quot;Kuis&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="115209446093219" type="System">
+                    <param id="0" name="Layer">&quot;DragDrop&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="453555444835522">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="378298699686577" type="System">
+                            <param id="0" name="Variable">DBLevelDipilih</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="415908559249278">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="913792407700042" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="884450461149540" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="678235806072646" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Kulit pisang setelah makan termasuk jenis sampah apa?&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="459364320892328" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Sampah Organik&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="725009294973963" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Sampah Anorganik&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="400221360178744" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Sampah Logam&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="438275142154196" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;A&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="714285909891748" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Kulit pisang berasal dari buah sehingga mudah membusuk dan terurai secara alami.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="903744048126049">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="291135906748452" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="769942521791834" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">3</param>
+                                </action>
+                                <action id="0" name="Set text" sid="821749960756998" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Botol plastik bekas minum termasuk jenis sampah apa?&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="488463067655625" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Sampah Organik&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="108864360682875" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Sampah Anorganik&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="227460487090035" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Sampah Daun&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="748390174693623" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;B&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="557609813097125" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Botol plastik dibuat dari bahan sintetis yang sangat sulit terurai di dalam tanah.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="946510403363681">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="292974678618253" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="968463675839175" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="122300678391412" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Daun-daun kering yang gugur di halaman sekolah masuk ke tong warna apa?&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="578377490711279" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Tong Hijau (Organik)&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="101448177534403" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Tong Kuning (Anorganik)&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="551333394071185" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Tong Merah&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="158379107947203" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;A&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="522609822160052" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Daun kering adalah sampah organik yang dapat diolah menjadi pupuk kompos.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="824417242102792">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="534759093990456" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">9</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="441329053835471" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">4</param>
+                                </action>
+                                <action id="0" name="Set text" sid="114139517728238" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Kaleng bekas minuman ringan sebaiknya dibuang ke tempat sampah...&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="974431743442657" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Organik&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="699342774328455" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Anorganik&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="129349674334161" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Sisa Makanan&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="985374849821076" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;B&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="661482890604438" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Kaleng logam tidak dapat membusuk, tetapi bisa didaur ulang menjadi benda baru.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="137106125910295">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="946005356296438" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="640681912159212" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="862693344996653" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Manakah di bawah ini yang termasuk contoh sampah organik?&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="992642876303794" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Kantong plastik&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="541517532345550" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Botol air mineral&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="601609710468315" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Sisa potongan apel&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="414432990046383" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;C&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="264215543129856" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Sisa buah dan sayuran merupakan sampah organik yang ramah lingkungan.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="186070901784104">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="489223689701592" type="System">
+                            <param id="0" name="Variable">DBLevelDipilih</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="518846663496130">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="724189513585138" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="160791901602020" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">5</param>
+                                </action>
+                                <action id="0" name="Set text" sid="361510819868696" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Mengapa kantong plastik digolongkan sebagai sampah anorganik?&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="655951602095082" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Mudah menjadi pupuk&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="427929647969853" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Butuh puluhan tahun untuk terurai&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="520743784395755" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Berasal dari tumbuhan&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="510174706118718" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;B&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="409273691924706" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Kantong plastik sangat sulit terurai alami sehingga dapat mencemari tanah dan sungai.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="629788617469984">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="618005209756594" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="551008159273296" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="194331224978998" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Sampah organik seperti daun kering dan sisa buah dapat dimanfaatkan menjadi...&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="260790287571960" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Pupuk kompos tanaman&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="168290053531702" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Mainan plastik&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="189402979853781" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Kaleng minuman&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="855952191094771" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;A&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="265542241072944" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Pembusukan sampah organik menghasilkan kompos yang menyuburkan tanaman sekolah.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="469693944519286">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="262407946478559" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="111947543209143" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">3</param>
+                                </action>
+                                <action id="0" name="Set text" sid="653882009219914" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Tindakan yang paling tepat untuk mengurangi sampah botol plastik adalah...&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="318496730947780" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Membakarnya di halaman&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="865959969268369" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Membuangnya ke selokan&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="616960990585627" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Membawa botol minum sendiri&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="807345514814508" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;C&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="750624275754669" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Membawa botol minum isi ulang mengurangi timbunan sampah plastik di sekolah.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="331257186717033">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="819269010354497" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">9</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="569895181305151" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="373638391177101" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Ciri utama sampah organik adalah...&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="317199629681809" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Mudah membusuk dan terurai&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="786801733832038" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Terbuat dari kaca dan besi&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="587564521100598" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Tidak pernah berubah bentuk&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="557688381502582" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;A&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="792523255527883" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Sampah organik berasal dari makhluk hidup sehingga cepat diuraikan mikroorganisme.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="494684639740200">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="944749224266843" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="297428251186663" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">4</param>
+                                </action>
+                                <action id="0" name="Set text" sid="465587970620017" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Apa arti simbol tiga panah melingkar pada tong sampah kuning?&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="907382571847620" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Dilarang membuang sampah&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="193178047290380" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Dapat didaur ulang (Recycle)&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="898553636339778" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Sampah mudah terbakar&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="409564658192514" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;B&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="383701165699811" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Simbol daur ulang menandakan sampah anorganik dapat diolah kembali menjadi barang berguna.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="365175602714771">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="767714729831010" type="System">
+                            <param id="0" name="Variable">DBLevelDipilih</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="173509978309377">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="931799584184819" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="297537007911602" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">4</param>
+                                </action>
+                                <action id="0" name="Set text" sid="307882422415236" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Jika sampah kaleng dan sisa apel tercampur dalam satu tong, akibatnya adalah...&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="902233630912297" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Kaleng langsung membusuk&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="430236490803149" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Sampah sulit didaur ulang dan berbau&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="988420369884461" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Tong menjadi lebih bersih&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="969033678672420" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;B&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="298660556566697" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Memilah sampah sejak awal memudahkan proses pengomposan dan daur ulang pabrik.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="325856996150103">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="466468584302064" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="541723790475165" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">5</param>
+                                </action>
+                                <action id="0" name="Set text" sid="530719709898873" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Memakai tas kain saat berbelanja menggantikan kantong plastik menerapkan prinsip...&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="612908203434301" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Reduce (Mengurangi)&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="437447078323087" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Membakar sampah&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="786174107720154" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Menimbun plastik&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="662361350298661" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;A&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="901143960886485" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Reduce berarti mengurangi penggunaan barang sekali pakai yang menghasilkan sampah.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="291340275316936">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="622440173579820" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="768389886790975" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">3</param>
+                                </action>
+                                <action id="0" name="Set text" sid="482164304616407" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Botol plastik bekas yang dibersihkan lalu dijadikan pot bunga menerapkan prinsip...&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="762793716225300" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Membuang sembarangan&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="237876448472934" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Reuse (Menggunakan kembali)&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="849411101080349" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Pengomposan&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="843494766969420" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;B&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="945882792846429" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Reuse adalah menggunakan kembali barang bekas anorganik menjadi benda bermanfaat.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="167224111934939">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="154002846464402" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">9</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="452889197984470" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="512178944586148" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Kulit pisang, daun kering, dan sisa nasi dikumpulkan bersama karena ketiganya...&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="681497236617544" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Sampah anorganik keras&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="701428753799134" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Bahan pembuat kaleng&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="261250441094300" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Bahan baku pupuk organik&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="456467702713757" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;C&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="785300866250175" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Ketiganya berasal dari bahan alami yang mudah terurai menjadi kompos.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="713871103186351">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="142939774791578" type="System">
+                                    <param id="0" name="Variable">NomorSoal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="293435644208137" type="Gambar_SoalKuis">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="971716577888722" type="Txt_SoalKuis">
+                                    <param id="0" name="Text">&quot;Apa manfaat utama membiasakan pilah sampah organik dan anorganik di sekolah?&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="819876556382979" type="Txt_OpsiA">
+                                    <param id="0" name="Text">&quot;A. Lingkungan bersih dan bebas banjir&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="636929786693109" type="Txt_OpsiB">
+                                    <param id="0" name="Text">&quot;B. Sampah menumpuk di kelas&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="766244184913729" type="Txt_OpsiC">
+                                    <param id="0" name="Text">&quot;C. Selokan tersumbat plastik&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="332691025123224" type="System">
+                                    <param id="0" name="Variable">KunciPilgan</param>
+                                    <param id="1" name="Value">&quot;A&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="435385857580119" type="System">
+                                    <param id="0" name="Variable">PenjelasanSoal</param>
+                                    <param id="1" name="Value">&quot;Pemilahan sampah menjaga kebersihan sekolah, kesehatan siswa, dan kelestarian alam.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="643844608040239">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="160620744049048" type="ObjekSampah" />
+                <condition id="-14" name="Compare variable" sid="220076295485700" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="302843355473432" type="ObjekSampah">
+                    <param id="0" name="Object">Tong_Organik</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="222110421133032" type="System">
+                    <param id="0" name="Layer">&quot;DragDrop&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="727004854190972" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="732776731413394" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="918160342955650">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="253465710420620" type="ObjekSampah">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Number">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="671966070010379" type="System">
+                            <param id="0" name="Variable">DBSkor</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="157970081739151" type="System">
+                            <param id="0" name="Variable">JumlahBenar</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="303714331905013" type="Txt_JudulFeedback">
+                            <param id="0" name="Text">&quot;JAWABAN BENAR! (+10)&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="659661158900246" type="Txt_IsiFeedback">
+                            <param id="0" name="Text">PenjelasanSoal</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="113970670728357" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="582194226527478">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="948369482714867" type="System">
+                                    <param id="0" name="Variable">SfxAktif</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="411060846621378" type="Audio">
+                                    <param id="0" name="Audio file">sfx_berhasil</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="717913956599304">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="207653793573235" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="334257935138772" type="System">
+                            <param id="0" name="Variable">JumlahSalah</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="396762028276588" type="Txt_JudulFeedback">
+                            <param id="0" name="Text">&quot;KURANG TEPAT!&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="478502547132896" type="Txt_IsiFeedback">
+                            <param id="0" name="Text">&quot;Benda ini adalah sampah ANORGANIK yang sulit terurai. Seharusnya masuk ke Tong Kuning!&quot;</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="586753648317821" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="151594605493724">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="182516067674930" type="System">
+                                    <param id="0" name="Variable">SfxAktif</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="561563817514501" type="Audio">
+                                    <param id="0" name="Audio file">sfx_error</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="787758913315155">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="948980736789229" type="ObjekSampah" />
+                <condition id="-14" name="Compare variable" sid="950118040798141" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="729561505951072" type="ObjekSampah">
+                    <param id="0" name="Object">Tong_Anorganik</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="142474076835905" type="System">
+                    <param id="0" name="Layer">&quot;DragDrop&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="395408950630389" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="547679648404590" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="979966561793416">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="959675676337080" type="ObjekSampah">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Number">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="660789574716852" type="System">
+                            <param id="0" name="Variable">DBSkor</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="937296530004250" type="System">
+                            <param id="0" name="Variable">JumlahBenar</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="869395138999525" type="Txt_JudulFeedback">
+                            <param id="0" name="Text">&quot;JAWABAN BENAR! (+10)&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="702740077505758" type="Txt_IsiFeedback">
+                            <param id="0" name="Text">PenjelasanSoal</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="208003561752391" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="406219866082561">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="551261801461638" type="System">
+                                    <param id="0" name="Variable">SfxAktif</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="899440422442405" type="Audio">
+                                    <param id="0" name="Audio file">sfx_berhasil</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="872891269827673">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="630901060489749" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="566231869065637" type="System">
+                            <param id="0" name="Variable">JumlahSalah</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="558389575209234" type="Txt_JudulFeedback">
+                            <param id="0" name="Text">&quot;KURANG TEPAT!&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="272642503094389" type="Txt_IsiFeedback">
+                            <param id="0" name="Text">&quot;Benda ini adalah sampah ORGANIK yang mudah membusuk. Seharusnya masuk ke Tong Hijau!&quot;</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="273104123856016" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="445356757771466">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="538250517941768" type="System">
+                                    <param id="0" name="Variable">SfxAktif</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="304085766758581" type="Audio">
+                                    <param id="0" name="Audio file">sfx_error</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="701206004060776">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="316605226589276" type="ObjekSampah" />
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="358076811740969" type="ObjekSampah">
+                    <param id="0" name="Object">Tong_Anorganik</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="182877577649374" type="ObjekSampah">
+                    <param id="0" name="Object">Tong_Organik</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="267571514419782" type="ObjekSampah">
+                    <param id="0" name="X">640</param>
+                    <param id="1" name="Y">355</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="509185769024539">
+            <conditions>
+                <condition id="3" name="On touched object" sid="195653537747479" type="Touch">
+                    <param id="0" name="Object">Btn_OpsiA</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="890181547926786" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="642558234117256" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="604366790377891" type="System">
+                    <param id="0" name="Layer">&quot;Kuis&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="629990894543365" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="133846790335986">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="421013973398730" type="System">
+                            <param id="0" name="Variable">KunciPilgan</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;A&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="594488665502107" type="System">
+                            <param id="0" name="Variable">DBSkor</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="770352081678386" type="System">
+                            <param id="0" name="Variable">JumlahBenar</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="728918164112725" type="Txt_JudulFeedback">
+                            <param id="0" name="Text">&quot;JAWABAN BENAR! (+10)&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="720013809595690" type="Txt_IsiFeedback">
+                            <param id="0" name="Text">PenjelasanSoal</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="798060648808846" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="392647090391708">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="454929048633183" type="System">
+                                    <param id="0" name="Variable">SfxAktif</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="487486227109617" type="Audio">
+                                    <param id="0" name="Audio file">sfx_berhasil</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="825077420682989">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="551878476327137" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="413541881308978" type="System">
+                            <param id="0" name="Variable">JumlahSalah</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="460218057132309" type="Txt_JudulFeedback">
+                            <param id="0" name="Text">&quot;KURANG TEPAT!&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="602651189865479" type="Txt_IsiFeedback">
+                            <param id="0" name="Text">PenjelasanSoal</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="835747887536929" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="720369783097509">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="387532967934885" type="System">
+                                    <param id="0" name="Variable">SfxAktif</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="258277650702532" type="Audio">
+                                    <param id="0" name="Audio file">sfx_error</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="308887038052636">
+            <conditions>
+                <condition id="3" name="On touched object" sid="330827284031855" type="Touch">
+                    <param id="0" name="Object">Btn_OpsiB</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="304559099879288" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="607739157100544" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="982705837932289" type="System">
+                    <param id="0" name="Layer">&quot;Kuis&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="843501076953007" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="431888089727763">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="883607145362446" type="System">
+                            <param id="0" name="Variable">KunciPilgan</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;B&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="266495176139586" type="System">
+                            <param id="0" name="Variable">DBSkor</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="277824527698603" type="System">
+                            <param id="0" name="Variable">JumlahBenar</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="226976950672234" type="Txt_JudulFeedback">
+                            <param id="0" name="Text">&quot;JAWABAN BENAR! (+10)&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="738307686239027" type="Txt_IsiFeedback">
+                            <param id="0" name="Text">PenjelasanSoal</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="172709146572523" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="781586491435693">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="267673283972733" type="System">
+                                    <param id="0" name="Variable">SfxAktif</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="937315142477345" type="Audio">
+                                    <param id="0" name="Audio file">sfx_berhasil</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="448213816680072">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="480022165251643" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="969015389862891" type="System">
+                            <param id="0" name="Variable">JumlahSalah</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="663174361928441" type="Txt_JudulFeedback">
+                            <param id="0" name="Text">&quot;KURANG TEPAT!&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="485556983254271" type="Txt_IsiFeedback">
+                            <param id="0" name="Text">PenjelasanSoal</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="311279915987965" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="946517299945203">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="803382893203880" type="System">
+                                    <param id="0" name="Variable">SfxAktif</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="219045114367793" type="Audio">
+                                    <param id="0" name="Audio file">sfx_error</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="446519495039679">
+            <conditions>
+                <condition id="3" name="On touched object" sid="869804711124717" type="Touch">
+                    <param id="0" name="Object">Btn_OpsiC</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="499074859674874" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="795637821048853" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="154275046021551" type="System">
+                    <param id="0" name="Layer">&quot;Kuis&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="102827344821807" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="967598525638290">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="532604217635285" type="System">
+                            <param id="0" name="Variable">KunciPilgan</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;C&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="103508923674689" type="System">
+                            <param id="0" name="Variable">DBSkor</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="399216856934887" type="System">
+                            <param id="0" name="Variable">JumlahBenar</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="920020877671565" type="Txt_JudulFeedback">
+                            <param id="0" name="Text">&quot;JAWABAN BENAR! (+10)&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="411027101857085" type="Txt_IsiFeedback">
+                            <param id="0" name="Text">PenjelasanSoal</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="191164314134211" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="775707452844018">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="764353356519668" type="System">
+                                    <param id="0" name="Variable">SfxAktif</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="789592055166166" type="Audio">
+                                    <param id="0" name="Audio file">sfx_berhasil</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="176074689445643">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="560300678324424" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="424475660618580" type="System">
+                            <param id="0" name="Variable">JumlahSalah</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="344891646485561" type="Txt_JudulFeedback">
+                            <param id="0" name="Text">&quot;KURANG TEPAT!&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="282044863682140" type="Txt_IsiFeedback">
+                            <param id="0" name="Text">PenjelasanSoal</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="769174229964359" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="249948194307366">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="425257234699282" type="System">
+                                    <param id="0" name="Variable">SfxAktif</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="238558926459953" type="Audio">
+                                    <param id="0" name="Audio file">sfx_error</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="569919103988123">
+            <conditions>
+                <condition id="3" name="On touched object" sid="798884056947370" type="Touch">
+                    <param id="0" name="Object">Btn_LanjutSoal</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="628498132933071" type="System">
+                    <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="782095756728411">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="952344574402072" type="System">
+                            <param id="0" name="Variable">NomorSoal</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="200485250302374" type="System">
+                            <param id="0" name="Variable">StatusJawab</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="455314726189111" type="System">
+                            <param id="0" name="Variable">NomorSoal</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="514880388549028" type="System">
+                            <param id="0" name="Variable">WaktuSoal</param>
+                            <param id="1" name="Value">BatasWaktuLevel</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="613587501118030" type="System">
+                            <param id="0" name="Layer">&quot;Feedback&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="864015873230285">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="623363440229903" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Stop" sid="534597742239401" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm_game&quot;</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="541670402557404" type="System">
+                            <param id="0" name="Layout">Layout_Hasil</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="233429094296756">
+            <conditions>
+                <condition id="3" name="On touched object" sid="914959713408385" type="Touch">
+                    <param id="0" name="Object">Btn_Pause</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="639119131624940" type="System">
+                    <param id="0" name="Variable">StatusJawab</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="782439812415965" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="912650051277442" type="Layar_Gelap" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="749783212250626" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="494770678452458" type="Layar_Gelap">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="922510558250949">
+            <conditions>
+                <condition id="3" name="On touched object" sid="877379419548502" type="Touch">
+                    <param id="0" name="Object">Btn_Lanjutkan</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="975893000566347" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="840207167100980" type="Layar_Gelap" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="755743586114286" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="421989257512565" type="Layar_Gelap">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="416811131564481">
+            <conditions>
+                <condition id="3" name="On touched object" sid="372561665354582" type="Touch">
+                    <param id="0" name="Object">Btn_UlangiGame</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="742780107849483" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="542287498746234" type="Layar_Gelap" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="141231896147153" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="6" name="Stop" sid="917519097962991" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm_game&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="613889599097013" type="Layar_Gelap">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="941531891851746" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="544773174300987">
+            <conditions>
+                <condition id="3" name="On touched object" sid="462145775540154" type="Touch">
+                    <param id="0" name="Object">Btn_KeluarGame</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="934039467017871" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="678752613652158" type="Layar_Gelap" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="225015222838256" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="6" name="Stop" sid="901226935158678" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm_game&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="863728047122989" type="Layar_Gelap">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="183081827723360" type="System">
+                    <param id="0" name="Layout">Layout_PilihLevel</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="808134676053579">
+            <conditions>
+                <condition id="3" name="On touched object" sid="290202469899906" type="Touch">
+                    <param id="0" name="Object">Btn_SuaraGame</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="605018209919973" type="System">
+                    <param id="0" name="Layer">&quot;Popup_Pause&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="229527262596845">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="953020498173219" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="185661671038082" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="981046093829070" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="596118123217262" type="Btn_SuaraGame">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="6" name="Stop" sid="884542756289849" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm_game&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="240644395791520">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="221406701651454" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="513598268506377" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="411000428130237" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="433073948090116" type="Btn_SuaraGame">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="578879021445262" type="Audio">
+                            <param id="0" name="Audio file">bgm</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm_game&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

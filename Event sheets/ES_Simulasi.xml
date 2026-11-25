@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES_Simulasi</name>
+    <events>
+        <variable comment="StatusSelesaiSim = 0 (0 = sedang bermain, 1 = misi selesai 6/6, 2 = gagal karena hati habis)" constant="0" name="StatusSelesaiSimulasi" sid="936442916887937" static="0" type="number">0</variable>
+        <variable comment="SkorSimulasi = 0 (skor khusus latihan simulasi, otomatis kembali ke 0 saat selesai/keluar)" constant="0" name="SkorSimulasi" sid="265235678707326" static="0" type="number">0</variable>
+        <variable comment="NyawaSim = 3 (jumlah hati aktif, maksimal 3)" constant="0" name="NyawaSimulasi" sid="486291125774795" static="0" type="number">3</variable>
+        <variable comment="TerkumpulSim = 0 (jumlah sampah berhasil dipilah, target 6)" constant="0" name="TotalSampahTerkumpulSimulasi" sid="583919866322811" static="0" type="number">0</variable>
+        <variable comment="SampahDipegang = 0 (pengunci utama: 0 = tangan kosong, 1 = memegang Organik, 2 = memegang Anorganik)" constant="0" name="KodeSampahDipegang" sid="290654960114699" static="0" type="number">0</variable>
+        <event-block sid="554277537057013">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="679935628506507" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="992846674502703" type="ObjekSampahSimulasi" />
+                <action id="-9" name="Set value" sid="638211332910516" type="System">
+                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="314190347317504" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="589907349126974" type="System">
+                    <param id="0" name="Variable">SkorSimulasi</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="921202070124253" type="System">
+                    <param id="0" name="Variable">TotalSampahTerkumpulSimulasi</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="924275755258167" type="System">
+                    <param id="0" name="Variable">NyawaSimulasi</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="0" name="Set text" sid="358169891361963" type="Teks_MisiSim">
+                    <param id="0" name="Text">&quot;Kumpulkan &amp; Pilah Sampah (0/6)&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="640534796375768" type="Teks_SkorSim">
+                    <param id="0" name="Text">&quot;0&quot;</param>
+                </action>
+                <action id="5" name="Set frame" sid="230713677262389" type="Hati_1">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="832341235432413" type="Hati_2">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="192997842464862" type="Hati_3">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="439526206381076" type="System">
+                    <param id="0" name="Layer">&quot;Popup_HasilSim&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="6" name="Stop" sid="301382164538203" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm_simulasi&quot;</param>
+                </action>
+                <action id="6" name="Stop" sid="465256567881179" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="443949575648323">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="149233839440667" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="748406230610888" type="Audio">
+                            <param id="0" name="Audio file">bgm_simulasi</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm_simulasi&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="659678148670752">
+                    <conditions>
+                        <condition id="-10" name="For" sid="821945500719514" type="System">
+                            <param id="0" name="Name">&quot;Spawn&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">5</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="415204216988668">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="111137569828792" type="System">
+                                    <param id="0" name="First value">loopindex</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="941407553552624" type="System">
+                                    <param id="0" name="Object to create">ObjekSampahSimulasi</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">random(320, 580)</param>
+                                    <param id="3" name="Y">random(250, 470)</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="347242967355266" type="ObjekSampahSimulasi">
+                                    <param id="0" name="Frame number">loopindex</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="388090821030938">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="918373389728018" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="211137316511355" type="System">
+                                    <param id="0" name="Object to create">ObjekSampahSimulasi</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">random(700, 960)</param>
+                                    <param id="3" name="Y">random(250, 470)</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="718442443876454" type="ObjekSampahSimulasi">
+                                    <param id="0" name="Frame number">loopindex</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="810316403609098">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="321578575908743" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="822550786525709" type="Siswa_Depan">
+                    <param id="0" name="Object">Hitbox_Siswa</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="609220003830070" type="Siswa_Samping">
+                    <param id="0" name="Object">Hitbox_Siswa</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="462295536256257">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="664941603583939" type="ObjekSampahSimulasi">
+                            <param id="0" name="Instance variable">SedangDipegang</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="698873668440641" type="ObjekSampahSimulasi">
+                            <param id="0" name="Object">Hitbox_Siswa</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="637892047793639">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="160412519919325" type="Touch">
+                    <param id="0" name="Object">Panah_Atas</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="423807680963262" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="656332728779103" type="Hitbox_Siswa">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="-15" name="Set visible" sid="478042376918910" type="Siswa_Depan">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="143475919198368" type="Siswa_Samping">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="239975131727163">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="715001636120286" type="Touch">
+                    <param id="0" name="Object">Panah_Bawah</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="838583017859375" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="424473388977629" type="Hitbox_Siswa">
+                    <param id="0" name="Control">3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="442981597506232" type="Siswa_Depan">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="744237316231836" type="Siswa_Samping">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="307947884099360">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="615142772787114" type="Touch">
+                    <param id="0" name="Object">Panah_Kanan</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="793778446554337" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="454360810033435" type="Hitbox_Siswa">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="754735948656061" type="Siswa_Depan">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="903777275292791" type="Siswa_Samping">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="771683497811635" type="Siswa_Samping">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="795508109288980">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="622772856327031" type="Touch">
+                    <param id="0" name="Object">Panah_Kiri</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="143151751170412" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="945058199148337" type="Hitbox_Siswa">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="674089053033593" type="Siswa_Depan">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="114757321650431" type="Siswa_Samping">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="509882771630514" type="Siswa_Samping">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="578132661598821">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="337038595477528" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="411228946868045" type="System">
+                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="328869153192448" type="Hitbox_Siswa">
+                    <param id="0" name="Object">Tong_Organik</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="471433947582211" type="Btn_AksiSimulasi">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="374715485908415" type="Btn_AksiSimulasi">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="673216617353574">
+            <conditions>
+                <condition id="-22" name="Else" sid="655266649642432" type="System" />
+                <condition id="-14" name="Compare variable" sid="543414385373683" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="275711693456255" type="System">
+                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="984669443842992" type="Hitbox_Siswa">
+                    <param id="0" name="Object">Tong_Anorganik</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="709258895788045" type="Btn_AksiSimulasi">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="283141065868728" type="Btn_AksiSimulasi">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="547672439833682">
+            <conditions>
+                <condition id="-22" name="Else" sid="413306576542800" type="System" />
+                <condition id="-14" name="Compare variable" sid="518436065259163" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="943307991488128" type="System">
+                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="319706124919289" type="Btn_AksiSimulasi">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="961737088967150" type="Btn_AksiSimulasi">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="977903841924172">
+            <conditions>
+                <condition id="-22" name="Else" sid="916327071115988" type="System" />
+                <condition id="-14" name="Compare variable" sid="237709648328761" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="271064363390026" type="System">
+                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="669981401368957" type="Hitbox_Siswa">
+                    <param id="0" name="Object">ObjekSampahSimulasi</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="381473271360797" type="Btn_AksiSimulasi">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="952819995611176" type="Btn_AksiSimulasi">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="131637285461332">
+            <conditions>
+                <condition id="-22" name="Else" sid="441544419914501" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="325214746207068" type="Btn_AksiSimulasi">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="850646388577110">
+            <conditions>
+                <condition id="3" name="On touched object" sid="758079177520015" type="Touch">
+                    <param id="0" name="Object">Btn_AksiSimulasi</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="685763866759655" type="System">
+                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="776512768452908" type="Btn_AksiSimulasi" />
+                <condition id="3" name="Compare frame" sid="189000412718895" type="Btn_AksiSimulasi">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">0</param>
+                </condition>
+                <condition id="-15" name="Pick nearest/furthest" sid="303827958093312" type="ObjekSampahSimulasi">
+                    <param id="0" name="Which">0</param>
+                    <param id="1" name="X">Hitbox_Siswa.X</param>
+                    <param id="2" name="Y">Hitbox_Siswa.Y</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="477211878708915" type="ObjekSampahSimulasi">
+                    <param id="0" name="X">Hitbox_Siswa.X</param>
+                    <param id="1" name="Y">Hitbox_Siswa.Y + 12</param>
+                </action>
+                <action id="-10" name="Set value" sid="401804783694547" type="ObjekSampahSimulasi">
+                    <param id="0" name="Instance variable">SedangDipegang</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="789640622231913">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="170101854009462" type="ObjekSampahSimulasi">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Number">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="168293881699954" type="System">
+                            <param id="0" name="Variable">KodeSampahDipegang</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="413234192903250">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="552343562751041" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="113762455957604" type="System">
+                            <param id="0" name="Variable">KodeSampahDipegang</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="324493196592800">
+            <conditions>
+                <condition id="3" name="On touched object" sid="675765864088621" type="Touch">
+                    <param id="0" name="Object">Btn_AksiSimulasi</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="206659773744074" type="Btn_AksiSimulasi" />
+                <condition id="3" name="Compare frame" sid="847210306486397" type="Btn_AksiSimulasi">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="680089741800533" type="System">
+                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="622456996988463" type="ObjekSampahSimulasi">
+                    <param id="0" name="Instance variable">SedangDipegang</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="543708814797917">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="549131764389449" type="Hitbox_Siswa">
+                            <param id="0" name="Object">Tong_Organik</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="505091581969393">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="272063025251324" type="System">
+                                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="953052501555953">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="620163031136120" type="ObjekSampahSimulasi" />
+                                        <action id="-9" name="Set value" sid="699257426833407" type="System">
+                                            <param id="0" name="Variable">KodeSampahDipegang</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="818846268376087" type="System">
+                                            <param id="0" name="Variable">SkorSimulasi</param>
+                                            <param id="1" name="Value">50</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="933168541467291" type="System">
+                                            <param id="0" name="Variable">TotalSampahTerkumpulSimulasi</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="970970497307103" type="Teks_SkorSim">
+                                            <param id="0" name="Text">SkorSimulasi</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="416350284748167" type="Teks_MisiSim">
+                                            <param id="0" name="Text">&quot;Kumpulkan &amp; Pilah Sampah (&quot; &amp; TotalSampahTerkumpulSimulasi &amp; &quot;/6)&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="779475128714915">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="435650398332558" type="System">
+                                                    <param id="0" name="Variable">SfxAktif</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="702856685692526" type="Audio">
+                                                    <param id="0" name="Audio file">sfx_berhasil</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="195403759333390">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="840006560053273" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="969507798828632" type="System">
+                                    <param id="0" name="Variable">NyawaSimulasi</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="712658771415239" type="ObjekSampahSimulasi">
+                                    <param id="0" name="Instance variable">SedangDipegang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="850542018797503" type="System">
+                                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="683411732571457">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="574389041539901" type="System">
+                                            <param id="0" name="Variable">SfxAktif</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="675289155876302" type="Audio">
+                                            <param id="0" name="Audio file">sfx_error</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="370012042182562">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="882106905456802" type="System" />
+                        <condition id="1" name="Is overlapping another object" sid="759189959235928" type="Hitbox_Siswa">
+                            <param id="0" name="Object">Tong_Anorganik</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="346227407411982" type="System">
+                            <param id="0" name="Variable">KodeSampahDipegang</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="725800070146226">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="698096995748218" type="System">
+                                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="825739461601990">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="605985204172990" type="ObjekSampahSimulasi" />
+                                        <action id="-9" name="Set value" sid="144428365706964" type="System">
+                                            <param id="0" name="Variable">KodeSampahDipegang</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="774889454789752" type="System">
+                                            <param id="0" name="Variable">SkorSimulasi</param>
+                                            <param id="1" name="Value">50</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="605058731320422" type="System">
+                                            <param id="0" name="Variable">TotalSampahTerkumpulSimulasi</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="155082631971222" type="Teks_SkorSim">
+                                            <param id="0" name="Text">SkorSimulasi</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="137399431083571" type="Teks_MisiSim">
+                                            <param id="0" name="Text">&quot;Kumpulkan &amp; Pilah Sampah (&quot; &amp; TotalSampahTerkumpulSimulasi &amp; &quot;/6)&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="861571345955740">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="801407680920379" type="System">
+                                                    <param id="0" name="Variable">SfxAktif</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="592734381262093" type="Audio">
+                                                    <param id="0" name="Audio file">sfx_berhasil</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="597037820398004">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="283211992400576" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="951666868519311" type="System">
+                                    <param id="0" name="Variable">NyawaSimulasi</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="588285477073055" type="ObjekSampahSimulasi">
+                                    <param id="0" name="Instance variable">SedangDipegang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="277762441789635" type="System">
+                                    <param id="0" name="Variable">KodeSampahDipegang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="542051198339307">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="854382827311616" type="System">
+                                            <param id="0" name="Variable">SfxAktif</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="789206342575014" type="Audio">
+                                            <param id="0" name="Audio file">sfx_error</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="253648441146348">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="670519397112938" type="System">
+                    <param id="0" name="Variable">NyawaSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="764796806414399" type="Hati_3">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="722907528188710">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="250144868615480" type="System">
+                    <param id="0" name="Variable">NyawaSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="253813351107715" type="Hati_3">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="763186460872799" type="Hati_2">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="523572385491115">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="167030230007911" type="System">
+                    <param id="0" name="Variable">NyawaSimulasi</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="450608128754439" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="241435362587955" type="Hati_1">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="834836291972806" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="0" name="Set text" sid="549843140062873" type="Teks_JudulHasilSim">
+                    <param id="0" name="Text">&quot;YAH, NYAWA HABIS!&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="632043625249185" type="Teks_SkorHasilSim">
+                    <param id="0" name="Text">&quot;Skor Latihan: &quot; &amp; SkorSimulasi &amp; newline &amp; &quot;Yuk baca Materi dulu sebelum mencoba lagi!&quot;</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="845655027797059" type="System">
+                    <param id="0" name="Layer">&quot;Popup_HasilSim&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="799538183968456">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="509332654756730" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="618841819909128" type="Audio">
+                            <param id="0" name="Audio file">sfx_kalah</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="363382115300642">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="798889549188331" type="System">
+                    <param id="0" name="Variable">TotalSampahTerkumpulSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">6</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="947757125678202" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="387880340741629" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="957591421847225" type="Teks_JudulHasilSim">
+                    <param id="0" name="Text">&quot;MISI SIMULASI SELESAI!&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="698682606412576" type="Teks_SkorHasilSim">
+                    <param id="0" name="Text">&quot;Skor Latihan: &quot; &amp; SkorSimulasi &amp; &quot; / 300&quot;</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="178352020568860" type="System">
+                    <param id="0" name="Layer">&quot;Popup_HasilSim&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="256868960281024">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="891651386652962" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="491221137314783" type="Audio">
+                            <param id="0" name="Audio file">sfx_selesai</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="500892435474940">
+            <conditions>
+                <condition id="3" name="On touched object" sid="617267670003080" type="Touch">
+                    <param id="0" name="Object">Btn_BerandaSimulasi</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="967079363230975" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="497775698797456" type="System">
+                    <param id="0" name="Variable">SkorSimulasi</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="6" name="Stop" sid="712169068131142" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm_simulasi&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="362790315138740" type="System">
+                    <param id="0" name="Layout">Layout_Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="584121346518079">
+            <conditions>
+                <condition id="3" name="On touched object" sid="931914540960544" type="Touch">
+                    <param id="0" name="Object">Btn_MateriSimulasi</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="627121128617583" type="System">
+                    <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="186091658675142" type="System">
+                    <param id="0" name="Variable">SkorSimulasi</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="6" name="Stop" sid="777826163665106" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm_simulasi&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="526567333979787" type="System">
+                    <param id="0" name="Layout">Layout_Materi</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="552517469253318">
+            <conditions>
+                <condition id="3" name="On touched object" sid="496609632864608" type="Touch">
+                    <param id="0" name="Object">Btn_UlangiGame</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="784844327541160" type="System">
+                    <param id="0" name="Layer">&quot;Popup_HasilSim&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="195694435214183" type="System">
+                    <param id="0" name="Variable">SkorSimulasi</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="6" name="Stop" sid="697231118486290" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm_simulasi&quot;</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="877166873979893" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="732939199500278">
+            <conditions>
+                <condition id="3" name="On touched object" sid="330199859809743" type="Touch">
+                    <param id="0" name="Object">Btn_HomeHasilSimulasi</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="509819314144404" type="System">
+                    <param id="0" name="Layer">&quot;Popup_HasilSim&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="410630149435347" type="System">
+                    <param id="0" name="Variable">SkorSimulasi</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="6" name="Stop" sid="182980701672546" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm_simulasi&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="686152008739904" type="System">
+                    <param id="0" name="Layout">Layout_Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="563887503331671">
+            <conditions>
+                <condition id="3" name="On touched object" sid="557735094510612" type="Touch">
+                    <param id="0" name="Object">Btn_MulaiBermainHasilSimulasi</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="565524550574084" type="System">
+                    <param id="0" name="Layer">&quot;Popup_HasilSim&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="636080301720846" type="System">
+                    <param id="0" name="Variable">SkorSimulasi</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="6" name="Stop" sid="233056955790449" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm_simulasi&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="333855159251308">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="511800284867777" type="System">
+                            <param id="0" name="Variable">StatusSelesaiSimulasi</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="351375258950783" type="System">
+                            <param id="0" name="Layout">Layout_PilihLevel</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="856609835016963">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="303440744483142" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="613218762689799" type="System">
+                            <param id="0" name="Layout">Layout_Materi</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

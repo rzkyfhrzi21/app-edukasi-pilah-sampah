@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES_Credits</name>
+    <events>
+        <event-block sid="130187254051902">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="760615104554174" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="907905427832899" type="Txt_IsiCredits">
+                    <param id="0" name="Text">&quot; Judul : Game Edukasi Pemilahan Sampah Organik &amp; Anorganik&quot; &amp; newline &amp; &quot; Pengembang : Laila Nurmas Vigih&quot; &amp; newline &amp; &quot; Program Studi : Teknik Informatika - IIB Darmajaya&quot; &amp; newline &amp; &quot; Studi Kasus : Siswa Kelas IV SD Negeri Bumi Agung&quot; &amp; newline &amp; &quot; Metode &amp; Tools : MDLC &amp; Construct 2&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="901241875573788">
+            <conditions>
+                <condition id="3" name="On touched object" sid="687252019989774" type="Touch">
+                    <param id="0" name="Object">Btn_Kembali</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="119628735555065">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="268366815297370" type="System">
+                            <param id="0" name="Variable">AsalCredits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="386695157563460" type="System">
+                            <param id="0" name="Layout">Layout_Menu</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="435362457999993">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="689346284593066" type="System">
+                            <param id="0" name="Variable">AsalCredits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="391507636536928" type="System">
+                            <param id="0" name="Layout">Layout_Pengaturan</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

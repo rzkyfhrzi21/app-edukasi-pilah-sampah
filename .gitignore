@@ -1,0 +1,19 @@
+# Construct 2 editor state & backup files
+*.uistate.xml
+*.capx.autosave
+*.capx.backup*
+*.bak
+*.tmp
+
+# Export / build folders (jika menaruh hasil export di dalam folder project)
+export/
+Exports/
+www/
+platforms/
+plugins/
+node_modules/
+
+# OS generated files
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES_PilihLevel</name>
+    <events>
+        <variable comment="Menyimpan level yang dipilih pemain (1, 2, atau 3) untuk dibaca di ES_Gameplay." constant="0" name="DBLevelDipilih" sid="823437861959159" static="0" type="number">0</variable>
+        <event-block sid="563452449423836">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="243700324979722" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="627783955910501" type="Btn_Level1">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="733689846464593" type="Bintang_Level1">
+                    <param id="0" name="Frame number">DBBintang_Level1</param>
+                </action>
+                <action id="5" name="Set frame" sid="941930193569129" type="Bintang_Level2">
+                    <param id="0" name="Frame number">DBBintang_Level2</param>
+                </action>
+                <action id="5" name="Set frame" sid="695942953356420" type="Bintang_Level3">
+                    <param id="0" name="Frame number">DBBintang_Level3</param>
+                </action>
+                <action id="5" name="Check item exists" sid="757403931919999" type="LocalStorage">
+                    <param id="0" name="Key">&quot;LevelTerbuka&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="972100999981891" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level1&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="855211473479041" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level2&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="513325684400282" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level3&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="916461835912383">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="298498593596569" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="5" inverted="1" name="Is tag playing" sid="889525110130126" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="295157129972320" type="Audio">
+                            <param id="0" name="Audio file">bgm</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="389373200529204">
+            <conditions>
+                <condition id="9" name="On item exists" sid="880847414276308" type="LocalStorage">
+                    <param id="0" name="Key">&quot;LevelTerbuka&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="997599540453909" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Value">int(LocalStorage.ItemValue)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="490288371507977">
+            <conditions>
+                <condition id="9" name="On item exists" sid="638790191442281" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="752723581860911" type="System">
+                    <param id="0" name="Variable">DBBintang_Level1</param>
+                    <param id="1" name="Value">int(LocalStorage.ItemValue)</param>
+                </action>
+                <action id="5" name="Set frame" sid="808402553462847" type="Bintang_Level1">
+                    <param id="0" name="Frame number">DBBintang_Level1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="856415067782613">
+            <conditions>
+                <condition id="9" name="On item exists" sid="100962154788975" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="942138422331795" type="System">
+                    <param id="0" name="Variable">DBBintang_Level2</param>
+                    <param id="1" name="Value">int(LocalStorage.ItemValue)</param>
+                </action>
+                <action id="5" name="Set frame" sid="312084567480442" type="Bintang_Level2">
+                    <param id="0" name="Frame number">DBBintang_Level2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="569032742042483">
+            <conditions>
+                <condition id="9" name="On item exists" sid="351528761578010" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level3&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="502145262583806" type="System">
+                    <param id="0" name="Variable">DBBintang_Level3</param>
+                    <param id="1" name="Value">int(LocalStorage.ItemValue)</param>
+                </action>
+                <action id="5" name="Set frame" sid="451155960891760" type="Bintang_Level3">
+                    <param id="0" name="Frame number">DBBintang_Level3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="326057507056433">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="875669156042684" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="266573972734654" type="Btn_Level2">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="479639047732268" type="Gembok_Level2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="825303892722206">
+            <conditions>
+                <condition id="-22" name="Else" sid="353850689957702" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="612462152303292" type="Btn_Level2">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="188558624748073" type="Gembok_Level2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="321390526783383">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="807402324291907" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="560700607478540" type="Btn_Level3">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="275019291304880" type="Gembok_Level3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="687184887776436">
+            <conditions>
+                <condition id="-22" name="Else" sid="149636832950742" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="985098332937676" type="Btn_Level3">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="230586140842849" type="Gembok_Level3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="160665109715386">
+            <conditions>
+                <condition id="3" name="On touched object" sid="779648452537551" type="Touch">
+                    <param id="0" name="Object">Btn_Level1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="956379712802914" type="System">
+                    <param id="0" name="Variable">DBLevelDipilih</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="893540782655655">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="890022956778501" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="590749034965249" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="508584070128438">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="667469756009115" type="System">
+                            <param id="0" name="Layout">Layout_Gameplay</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="665638569030985">
+            <conditions>
+                <condition id="3" name="On touched object" sid="823500656017662" type="Touch">
+                    <param id="0" name="Object">Btn_Level2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="129651049227764" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="340065774158194" type="System">
+                    <param id="0" name="Variable">DBLevelDipilih</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="121516269425512">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="585225933317594" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="192491597631412" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="177715748034662">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="833315220786451" type="System">
+                            <param id="0" name="Layout">Layout_Gameplay</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="673892110310449">
+            <conditions>
+                <condition id="3" name="On touched object" sid="683775654739828" type="Touch">
+                    <param id="0" name="Object">Btn_Level2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="594363579641001" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="589776650106720" type="System">
+                    <param id="0" name="Variable">SfxAktif</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="674935229852585" type="Audio">
+                    <param id="0" name="Audio file">sfx_error</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="830339257515818">
+            <conditions>
+                <condition id="3" name="On touched object" sid="741364592896218" type="Touch">
+                    <param id="0" name="Object">Btn_Level3</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="672137595553458" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="689748730220886" type="System">
+                    <param id="0" name="Variable">DBLevelDipilih</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="816069723532268">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="935713077515957" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="274347819072239" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="102029836161765">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="940487884577197" type="System">
+                            <param id="0" name="Layout">Layout_Gameplay</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="553918377798158">
+            <conditions>
+                <condition id="3" name="On touched object" sid="650470054331538" type="Touch">
+                    <param id="0" name="Object">Btn_Level3</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="457213182333664" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="179189547071664" type="System">
+                    <param id="0" name="Variable">SfxAktif</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="388363514698468" type="Audio">
+                    <param id="0" name="Audio file">sfx_error</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="335415200338662">
+            <conditions>
+                <condition id="3" name="On touched object" sid="523945951630443" type="Touch">
+                    <param id="0" name="Object">Btn_Kembali</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="664595508583558" type="System">
+                    <param id="0" name="Layout">Layout_Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

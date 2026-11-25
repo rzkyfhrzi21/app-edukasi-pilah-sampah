@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES_Menu</name>
+    <events>
+        <event-block sid="962573348038045">
+            <conditions>
+                <condition id="3" name="On touched object" sid="438092389673570" type="Touch">
+                    <param id="0" name="Object">Btn_Mulai</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="701796846078755" type="System">
+                    <param id="0" name="Layout">Layout_PilihLevel</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="875650189977026">
+            <conditions>
+                <condition id="3" name="On touched object" sid="964165446687314" type="Touch">
+                    <param id="0" name="Object">Btn_Materi</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="502155710751808" type="System">
+                    <param id="0" name="Layout">Layout_Materi</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="217105953803449">
+            <conditions>
+                <condition id="3" name="On touched object" sid="227075318893479" type="Touch">
+                    <param id="0" name="Object">Btn_Pengaturan</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="997143843391214" type="System">
+                    <param id="0" name="Layout">Layout_Pengaturan</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="894908965933005">
+            <conditions>
+                <condition id="3" name="On touched object" sid="754068115432775" type="Touch">
+                    <param id="0" name="Object">Btn_Credits</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="182492422759040" type="System">
+                    <param id="0" name="Variable">AsalCredits</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="625202772524123" type="System">
+                    <param id="0" name="Layout">Layout_Credits</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="661378407184164">
+            <conditions>
+                <condition id="3" name="On touched object" sid="883132022282374" type="Touch">
+                    <param id="0" name="Object">Btn_Simulasi</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="813985784894532" type="System">
+                    <param id="0" name="Layout">Layout_Simulasi</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="803877280057410">
+            <conditions>
+                <condition id="3" name="On touched object" sid="463054392125160" type="Touch">
+                    <param id="0" name="Object">Btn_Keluar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Close" sid="816399743012193" type="Browser" />
+            </actions>
+        </event-block>
+        <event-block sid="132709211778405">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="984068706769128" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Check item exists" sid="746752485340628" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MusikAktif&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="233046020508998" type="LocalStorage">
+                    <param id="0" name="Key">&quot;SfxAktif&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="308323291287287" type="LocalStorage">
+                    <param id="0" name="Key">&quot;LevelTerbuka&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="919643487268163" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level1&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="180552776305018" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level2&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="198758065628566" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level3&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="355092591857896">
+            <conditions>
+                <condition id="9" name="On item exists" sid="156449773434920" type="LocalStorage">
+                    <param id="0" name="Key">&quot;SfxAktif&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="591497975471518" type="System">
+                    <param id="0" name="Variable">SfxAktif</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="189940351738588">
+            <conditions>
+                <condition id="9" name="On item exists" sid="871130623770920" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MusikAktif&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="315224609858032" type="System">
+                    <param id="0" name="Variable">MusikAktif</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="789341022313203">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="922977143595329" type="System">
+                            <param id="0" name="Variable">MusikAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set muted" sid="626153100651645" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="6" name="Stop" sid="582907702531617" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="364527673073611">
+            <conditions>
+                <condition id="9" name="On item exists" sid="383315354820747" type="LocalStorage">
+                    <param id="0" name="Key">&quot;LevelTerbuka&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="462827088897447" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="693214469495400">
+            <conditions>
+                <condition id="9" name="On item exists" sid="876306486337660" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="836785170155300" type="System">
+                    <param id="0" name="Variable">DBBintang_Level1</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="316087212207619">
+            <conditions>
+                <condition id="9" name="On item exists" sid="574858313283188" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="644804139802073" type="System">
+                    <param id="0" name="Variable">DBBintang_Level2</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="728064381834792">
+            <conditions>
+                <condition id="9" name="On item exists" sid="952161676922341" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level3&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="456158490026129" type="System">
+                    <param id="0" name="Variable">DBBintang_Level3</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="894594603945658">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="339989520062501" type="System" />
+                <condition id="-14" name="Compare variable" sid="270420444664703" type="System">
+                    <param id="0" name="Variable">MusikAktif</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="5" inverted="1" name="Is tag playing" sid="656047666908086" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="455832758182056" type="Audio">
+                    <param id="0" name="Audio file">bgm</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

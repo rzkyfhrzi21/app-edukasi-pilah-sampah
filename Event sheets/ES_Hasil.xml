@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES_Hasil</name>
+    <events>
+        <variable comment="Menyimpan perolehan bintang (0, 1, 2, atau 3) dari sesi permainan yang baru selesai." constant="0" name="BintangDidapat" sid="110842490682753" static="0" type="number">0</variable>
+        <event-block sid="614378346146592">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="722241091068460" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="936648424293930" type="Txt_SkorAkhir">
+                    <param id="0" name="Text">&quot;SKOR AKHIR: &quot; &amp; DBSkor</param>
+                </action>
+                <action id="0" name="Set text" sid="358579462486734" type="Txt_JumlahBenar">
+                    <param id="0" name="Text">&quot;BENAR: &quot; &amp; JumlahBenar</param>
+                </action>
+                <action id="0" name="Set text" sid="907056081172081" type="Txt_JumlahSalah">
+                    <param id="0" name="Text">&quot;SALAH: &quot; &amp; JumlahSalah</param>
+                </action>
+                <action id="-9" name="Set value" sid="466971643200105" type="System">
+                    <param id="0" name="Variable">BintangDidapat</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="631163361920362">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="657731187484269" type="System">
+                            <param id="0" name="Variable">DBSkor</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">90</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="903390567656688" type="System">
+                            <param id="0" name="Variable">BintangDidapat</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="664741027781015">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="713485032751047" type="System" />
+                        <condition id="-14" name="Compare variable" sid="617856801440330" type="System">
+                            <param id="0" name="Variable">DBSkor</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">70</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="721158489602064" type="System">
+                            <param id="0" name="Variable">BintangDidapat</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="752834366057053">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="945952268932060" type="System" />
+                        <condition id="-14" name="Compare variable" sid="965023538551579" type="System">
+                            <param id="0" name="Variable">DBSkor</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="562121405194870" type="System">
+                            <param id="0" name="Variable">BintangDidapat</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="924903500001738">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="321615776461230" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="155649544600292" type="System">
+                            <param id="0" name="Variable">BintangDidapat</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="100880445172569">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="438491593560799" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="771539091990601" type="Bintang_Hasil">
+                    <param id="0" name="Frame number">BintangDidapat</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="828533355905678">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="268379404352446" type="System">
+                            <param id="0" name="Variable">BintangDidapat</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="566899332688196" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="308903052286961" type="Audio">
+                            <param id="0" name="Audio file">sfx_selesai</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="530562894977149">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="317749178017818" type="System" />
+                        <condition id="-14" name="Compare variable" sid="315345710389528" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="191297284817227" type="Audio">
+                            <param id="0" name="Audio file">sfx_kalah</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="625506355425532">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="942883747214794" type="System">
+                    <param id="0" name="Variable">DBLevelDipilih</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="323992209695447" type="System">
+                    <param id="0" name="Variable">BintangDidapat</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">DBBintang_Level1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="206982449238491" type="System">
+                    <param id="0" name="Variable">DBBintang_Level1</param>
+                    <param id="1" name="Value">BintangDidapat</param>
+                </action>
+                <action id="0" name="Set item" sid="998170948859403" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level1&quot;</param>
+                    <param id="1" name="Value">DBBintang_Level1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="640514904074450">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="187239851931094" type="System">
+                    <param id="0" name="Variable">DBLevelDipilih</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="950116887803108" type="System">
+                    <param id="0" name="Variable">BintangDidapat</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="317910112366549" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="584318393727544" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="0" name="Set item" sid="153400579674817" type="LocalStorage">
+                    <param id="0" name="Key">&quot;LevelTerbuka&quot;</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="793767095437590">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="110506732229821" type="System">
+                    <param id="0" name="Variable">DBLevelDipilih</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="355335156446579" type="System">
+                    <param id="0" name="Variable">BintangDidapat</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">DBBintang_Level2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="660406662558514" type="System">
+                    <param id="0" name="Variable">DBBintang_Level2</param>
+                    <param id="1" name="Value">BintangDidapat</param>
+                </action>
+                <action id="0" name="Set item" sid="910073738278437" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level2&quot;</param>
+                    <param id="1" name="Value">DBBintang_Level2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="421734425014439">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="229024114745284" type="System">
+                    <param id="0" name="Variable">DBLevelDipilih</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="243784389644024" type="System">
+                    <param id="0" name="Variable">BintangDidapat</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="938034000800393" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="848542343080789" type="System">
+                    <param id="0" name="Variable">DBLevelTerbuka</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="0" name="Set item" sid="913394064602521" type="LocalStorage">
+                    <param id="0" name="Key">&quot;LevelTerbuka&quot;</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="128044367692236">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="864672355563458" type="System">
+                    <param id="0" name="Variable">DBLevelDipilih</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="626613856822248" type="System">
+                    <param id="0" name="Variable">BintangDidapat</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">DBBintang_Level3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="352924512418624" type="System">
+                    <param id="0" name="Variable">DBBintang_Level3</param>
+                    <param id="1" name="Value">BintangDidapat</param>
+                </action>
+                <action id="0" name="Set item" sid="780678660477945" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Bintang_Level3&quot;</param>
+                    <param id="1" name="Value">DBBintang_Level3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="509076787586529">
+            <conditions>
+                <condition id="3" name="On touched object" sid="427129182011761" type="Touch">
+                    <param id="0" name="Object">Btn_UlangHasil</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="709013765221906">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="248424111507940" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="683069211797181" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="907809684386541">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="593075666461610" type="System">
+                            <param id="0" name="Layout">Layout_Gameplay</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="514954784488602">
+            <conditions>
+                <condition id="3" name="On touched object" sid="663738991624341" type="Touch">
+                    <param id="0" name="Object">Btn_LanjutHasil</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="191932434112546">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="429221462285090" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="119762824922229" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="365821363629664">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="162838780309977" type="System">
+                            <param id="0" name="Layout">Layout_PilihLevel</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="519550261679000">
+            <conditions>
+                <condition id="3" name="On touched object" sid="602432557564755" type="Touch">
+                    <param id="0" name="Object">Btn_HomeHasil</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="339549313300945">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="580684291565366" type="System">
+                            <param id="0" name="Variable">SfxAktif</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="957033713961779" type="Audio">
+                            <param id="0" name="Audio file">sfx_berhasil</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="146384367446996">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="267559051519620" type="System">
+                            <param id="0" name="Layout">Layout_Menu</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

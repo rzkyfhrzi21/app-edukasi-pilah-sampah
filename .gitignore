@@ -5,13 +5,15 @@
 *.bak
 *.tmp
 
-# Export / build folders (jika menaruh hasil export di dalam folder project)
-export/
-Exports/
-www/
-platforms/
-plugins/
-node_modules/
+# Raw reference / unoptimized source assets & temporary script outputs
+mentahan/
+output_png/
+__pycache__/
+
+# Cordova build outputs (generated in CI / local build)
+export/platforms/
+export/plugins/
+export/node_modules/
 
 # OS generated files
 Thumbs.db

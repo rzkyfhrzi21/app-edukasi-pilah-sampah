@@ -1,0 +1,31 @@
+﻿{
+	"id": "com.laila.pilahsampah",
+	"version": "1.0.0.0",
+	"name": "Pilah Sampah",
+	"description": "Pengembangan Game Edukasi Pemilahan Sampah Organik dan Anorganik Menggunakan Metode MDLC",
+	"author": "Laila Nurmas Vigih",
+	"email": "lailansvh@gmail.com",
+	"website": "",
+	"fullscreen": "true",
+	"useragent": null,
+	"orientation": "landscape",
+	"icons": [{
+		"src": "www/icon-256.png",
+		"width": 256,
+		"height": 256,
+		"density": "xxxhdpi"
+	}, {
+		"src": "www/icon-128.png",
+		"width": 128,
+		"height": 128,
+		"density": "xhdpi"
+	}],
+	"plugins": [
+		{ "id": "cordova-plugin-inappbrowser", "version": null },
+		{ "id": "cordova-plugin-statusbar", "version": null }
+	],
+	"android": {
+		"min": 23,
+		"plugins": []
+	}
+}

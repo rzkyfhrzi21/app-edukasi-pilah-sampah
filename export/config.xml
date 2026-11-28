@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<widget id="com.laila.pilahsampah" version="1.0.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+	<name>Pilah Sampah</name>
+	<description>Pengembangan Game Edukasi Pemilahan Sampah Organik dan Anorganik Menggunakan Metode MDLC</description>
+	<author email="lailansvh@gmail.com">Laila Nurmas Vigih</author>
+
+	<icon src="www/icon-256.png" width="256" height="256" density="xxxhdpi" />
+	<icon src="www/icon-128.png" width="128" height="128" density="xhdpi" />
+
+	<preference name="orientation" value="landscape" />
+	<preference name="fullscreen" value="true" />
+	<preference name="DisallowOverscroll" value="true" />
+
+	<preference name="android-minSdkVersion" value="23" />
+	<access origin="*" />
+
+	<plugin name="cordova-plugin-inappbrowser" />
+	<plugin name="cordova-plugin-statusbar" />
+
+	<engine name="android" />
+</widget>

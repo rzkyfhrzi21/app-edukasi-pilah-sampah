@@ -1,0 +1,46 @@
+name: Build Android APK
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'export/**'
+      - '.github/workflows/build-apk.yml'
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Cordova CLI
+        run: npm install -g cordova@12
+
+      - name: Add Android platform & build APK
+        working-directory: ./export
+        run: |
+          cordova platform add android@13.0.0 --no-telemetry
+          cordova build android --debug --no-telemetry
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Pilah-Sampah-APK
+          path: export/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES_Loading</name>
+    <events>
+        <variable comment="Menyimpan nilai progres loading (0 sampai 100) sebelum pindah ke Layout_Menu." constant="0" name="ProgresLoading" sid="920997424502592" static="0" type="number">0</variable>
+        <event-block sid="910085174383278">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="713639780616021" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="510154328615977" type="System">
+                    <param id="0" name="Variable">ProgresLoading</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set text" sid="365157382435643" type="Txt_PersenLoading">
+                    <param id="0" name="Text">&quot;Memuat permainan... 0%&quot;</param>
+                </action>
+                <action id="-5" name="Set width" sid="191976597544650" type="Bar_Loading_Fill">
+                    <param id="0" name="Width">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="348690679247380">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="613741232001835" type="System">
+                    <param id="0" name="Variable">ProgresLoading</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="447079674913611" type="System">
+                    <param id="0" name="Interval (seconds)">0.03</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="344258439821187" type="System">
+                    <param id="0" name="Variable">ProgresLoading</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-5" name="Set width" sid="897166124179334" type="Bar_Loading_Fill">
+                    <param id="0" name="Width">(ProgresLoading / 100) * 450</param>
+                </action>
+                <action id="0" name="Set text" sid="769434557526527" type="Txt_PersenLoading">
+                    <param id="0" name="Text">&quot;Memuat permainan... &quot; &amp; ProgresLoading &amp; &quot;%&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="290490723684375">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="736662859600624" type="System">
+                    <param id="0" name="Variable">ProgresLoading</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="146302081737913" type="System" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="496383705750005" type="System">
+                    <param id="0" name="Layout">Layout_Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

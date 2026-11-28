@@ -6,7 +6,7 @@ on:
       - main
       - master
     paths:
-      - 'export/**'
+      - 'export-pilah/**'
       - '.github/workflows/build-apk.yml'
   workflow_dispatch:
 
@@ -33,7 +33,7 @@ jobs:
         run: npm install -g cordova@12
 
       - name: Add Android platform & build APK
-        working-directory: ./export
+        working-directory: ./export-pilah
         run: |
           cordova platform add android@13.0.0 --no-telemetry
           cordova build android --debug --no-telemetry
@@ -42,5 +42,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Pilah-Sampah-APK
-          path: export/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+          path: export-pilah/platforms/android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error

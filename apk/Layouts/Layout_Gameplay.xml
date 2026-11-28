@@ -11,7 +11,7 @@
         <horizontal>500</horizontal>
         <vertical>500</vertical>
     </margins>
-    <unbounded-scrolling>0</unbounded-scrolling>
+    <unbounded-scrolling>1</unbounded-scrolling>
     <layers>
         <layer name="Background" sid="756577054587006">
             <initially-visible>1</initially-visible>
@@ -42,8 +42,8 @@
                         <x>640</x>
                         <y>360</y>
                         <z>0</z>
-                        <width>1280</width>
-                        <height>720</height>
+                        <width>1700</width>
+                        <height>956</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -838,11 +838,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>0</x>
-                        <y>0</y>
+                        <x>-350</x>
+                        <y>-180</y>
                         <z>0</z>
-                        <width>1280</width>
-                        <height>720</height>
+                        <width>1980</width>
+                        <height>1080</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

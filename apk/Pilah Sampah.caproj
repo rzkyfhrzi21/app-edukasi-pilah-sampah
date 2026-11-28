@@ -39,7 +39,7 @@
         <prop name="Clear background">Yes</prop>
         <prop name="Downscaling">Medium quality</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen in browser">Scale outer</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Construct 2 splash</prop>
         <prop name="Orientations">Landscape</prop>
@@ -199,7 +199,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="588428728828896" speed="5">
-                        <frame duration="1" hotspotX="0.501818" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_zdvu68zdvu68zdvu (1)_tight.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_zdvu68zdvu68zdvu (1)_tight.png">
                             <collision-poly>
                                 <point x="0.00363638" y="0.553191" />
                                 <point x="0.501818" y="0.0106383" />
@@ -267,7 +267,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="559925625256873" speed="5">
-                        <frame duration="1" hotspotX="0.502146" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\btn_credits.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\btn_credits.png">
                             <collision-poly>
                                 <point x="0.00429185" y="0.776596" />
                                 <point x="0.502146" y="0.0106383" />
@@ -1456,7 +1456,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="962285274890339" speed="0">
-                        <frame duration="1" hotspotX="0.50303" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\assets real\karakter_siswa_jalan_samping_menu.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\assets real\karakter_siswa_jalan_samping_menu.png">
                             <collision-poly>
                                 <point x="0.793939" y="0.5" />
                                 <point x="0.793939" y="0.78836" />
@@ -1468,7 +1468,7 @@
                                 <point x="0.963636" y="0.137566" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.50303" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
                                 <point x="0.0363637" y="0.137566" />
                                 <point x="0.50303" y="0.0026455" />
@@ -1900,7 +1900,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="577206453514026" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.500952" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_zdvu68zdvu68zdvu_1x1.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_zdvu68zdvu68zdvu_1x1.png">
                             <collision-poly>
                                 <point x="0.148903" y="0.0742857" />
                                 <point x="0.5" y="0.0228571" />
@@ -1956,7 +1956,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="994046405736622" speed="5">
-                        <frame duration="1" hotspotX="0.503597" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg_original.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg_original.png">
                             <collision-poly>
                                 <point x="0.0551559" y="0.121118" />
                                 <point x="0.503597" y="0.0310559" />
@@ -2178,7 +2178,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="242427971492286" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501493" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (5)_1x1.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (5)_1x1.png">
                             <collision-poly>
                                 <point x="0.239812" y="0.00597015" />
                                 <point x="0.760188" y="0.00597015" />
@@ -2188,16 +2188,14 @@
                                 <point x="0.0015674" y="0.501493" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501567" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (2)_tight.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (2)_tight.png">
                             <collision-poly>
-                                <point x="0.249216" y="0.30303" />
-                                <point x="0.750784" y="0.30303" />
-                                <point x="0.750784" y="0.30303" />
-                                <point x="0.750784" y="0.700105" />
-                                <point x="0.750784" y="0.700105" />
-                                <point x="0.750784" y="0.700105" />
-                                <point x="0.249216" y="0.700105" />
-                                <point x="0.249216" y="0.700105" />
+                                <point x="0.239812" y="0.00597015" />
+                                <point x="0.760188" y="0.00597015" />
+                                <point x="0.998433" y="0.5" />
+                                <point x="0.758621" y="0.99403" />
+                                <point x="0.241379" y="0.99403" />
+                                <point x="0.0015674" y="0.5" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -2207,7 +2205,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="950339395003077" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501493" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (5)_1x1.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (5)_1x1.png">
                             <collision-poly>
                                 <point x="0.239812" y="0.00597015" />
                                 <point x="0.760188" y="0.00597015" />
@@ -2217,16 +2215,14 @@
                                 <point x="0.0015674" y="0.501493" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501567" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (2)_tight.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\@UNDERGROUND DEV\@edukasi-recycle-bin\assets\Layout_Pengaturan\Gemini_Generated_Image_o6hgw0o6hgw0o6hg (2)_tight.png">
                             <collision-poly>
-                                <point x="0.249216" y="0.30303" />
-                                <point x="0.750784" y="0.30303" />
-                                <point x="0.750784" y="0.30303" />
-                                <point x="0.750784" y="0.700105" />
-                                <point x="0.750784" y="0.700105" />
-                                <point x="0.750784" y="0.700105" />
-                                <point x="0.249216" y="0.700105" />
-                                <point x="0.249216" y="0.700105" />
+                                <point x="0.239812" y="0.00597015" />
+                                <point x="0.760188" y="0.00597015" />
+                                <point x="0.998433" y="0.5" />
+                                <point x="0.758621" y="0.99403" />
+                                <point x="0.241379" y="0.99403" />
+                                <point x="0.0015674" y="0.5" />
                             </collision-poly>
                         </frame>
                     </animation>

@@ -232,7 +232,7 @@
             <actions>
                 <action id="-9" name="Set value" sid="340065774158194" type="System">
                     <param id="0" name="Variable">DBLevelDipilih</param>
-                    <param id="1" name="Value">2</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
             <sub-events>
@@ -302,7 +302,7 @@
             <actions>
                 <action id="-9" name="Set value" sid="689748730220886" type="System">
                     <param id="0" name="Variable">DBLevelDipilih</param>
-                    <param id="1" name="Value">3</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
             <sub-events>

@@ -11,9 +11,9 @@ output_png/
 __pycache__/
 
 # Cordova build outputs (generated in CI / local build)
-export/platforms/
-export/plugins/
-export/node_modules/
+export-pilah/platforms/
+export-pilah/plugins/
+export-pilah/node_modules/
 
 # OS generated files
 Thumbs.db
